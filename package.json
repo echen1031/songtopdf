@@ -1,0 +1,7 @@
+{
+  "name": "songtopdf",
+  "private": true,
+  "dependencies": {
+    "puppeteer": "^24.2.0"
+  }
+}

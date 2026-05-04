@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title><%= @song["title"] %></title>
+  <style>
+    body {
+      font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+      font-size: 11pt;
+      line-height: 1.45;
+      color: #111;
+      margin: 0;
+    }
+    h1 {
+      font-size: 18pt;
+      font-weight: 600;
+      margin: 0 0 0.35em;
+    }
+    .meta {
+      color: #555;
+      font-size: 10pt;
+      margin-bottom: 1.25em;
+    }
+    pre.lyrics {
+      font-family: ui-monospace, "Cascadia Code", "SF Mono", Menlo, monospace;
+      font-size: 10pt;
+      white-space: pre-wrap;
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+  <%= yield %>
+</body>
+</html>

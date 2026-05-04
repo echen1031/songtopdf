@@ -1,0 +1,36 @@
+{
+  "songs": [
+    {
+      "id": 303,
+      "title": "Father Abraham",
+      "lang": "english",
+      "lyrics": "Sample",
+      "language_links": []
+    },
+    {
+      "id": 304,
+      "title": "Who's the king of the jungle?",
+      "lang": "english",
+      "lyrics": "Sample",
+      "language_links": []
+    },
+    {
+      "id": 704,
+      "title": "Test songbook A",
+      "lang": "english",
+      "lyrics": "#(Capo test)\n\n1\n[G]Christ [C]has\nPlain verse line\n2\n[D]End",
+      "language_links": []
+    },
+    {
+      "id": 3952,
+      "title": "Test songbook B",
+      "lang": "english",
+      "lyrics": "1\n[C]Blessing [Dm]eternal\n\n2\nPlain second stanza",
+      "language_links": []
+    }
+  ],
+  "books": [],
+  "destroyed": {},
+  "songCount": 4,
+  "data_updated_between": null
+}

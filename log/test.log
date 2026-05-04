@@ -1,0 +1,1779 @@
+-----------------------------------------------------------
+Api::SongsControllerTest: test_lookup_rejects_non-array_ids
+-----------------------------------------------------------
+Started POST "/api/songs/lookup" for 127.0.0.1 at 2026-05-04 01:07:50 -0500
+Processing by Api::SongsController#lookup as JSON
+  Parameters: {"ids"=>"303", "song"=>{"ids"=>"303"}}
+Completed 422 Unprocessable Content in 2ms (Views: 0.1ms | GC: 0.0ms)
+-----------------------------------------------------
+Api::SongsControllerTest: test_show_returns_song_json
+-----------------------------------------------------
+Started GET "/api/songs/303" for 127.0.0.1 at 2026-05-04 01:07:50 -0500
+Processing by Api::SongsController#show as HTML
+  Parameters: {"id"=>"303"}
+Completed 200 OK in 0ms (Views: 0.0ms | GC: 0.0ms)
+---------------------------------------------------------------
+Api::SongsControllerTest: test_show_is_not_found_for_missing_id
+---------------------------------------------------------------
+Started GET "/api/songs/999999" for 127.0.0.1 at 2026-05-04 01:07:50 -0500
+Processing by Api::SongsController#show as HTML
+  Parameters: {"id"=>"999999"}
+Completed 404 Not Found in 0ms (GC: 0.0ms)
+-----------------------------------------------------------
+Api::SongsControllerTest: test_lookup_returns_songs_wrapper
+-----------------------------------------------------------
+Started POST "/api/songs/lookup" for 127.0.0.1 at 2026-05-04 01:07:50 -0500
+Processing by Api::SongsController#lookup as JSON
+  Parameters: {"ids"=>[304, 303], "song"=>{"ids"=>[304, 303]}}
+Completed 200 OK in 0ms (Views: 0.0ms | GC: 0.0ms)
+-------------------------------------------------------------------
+Songbase::AppDataSongQueryTest: test_song_returns_hash_for_known_id
+-------------------------------------------------------------------
+------------------------------------------------------------------------------------
+Songbase::AppDataSongQueryTest: test_songs_preserves_request_order_and_skips_unknown
+------------------------------------------------------------------------------------
+-----------------------------------------------------------------
+Songbase::AppDataSongQueryTest: test_songs_payload_wraps_like_API
+-----------------------------------------------------------------
+--------------------------------------------------------------------
+Songbase::AppDataSongQueryTest: test_song_returns_nil_for_unknown_id
+--------------------------------------------------------------------
+-----------------------------------------------------------------
+Songbase::AppDataSongQueryTest: test_songs_payload_wraps_like_API
+-----------------------------------------------------------------
+------------------------------------------------------------------------------------
+Songbase::AppDataSongQueryTest: test_songs_preserves_request_order_and_skips_unknown
+------------------------------------------------------------------------------------
+--------------------------------------------------------------------
+Songbase::AppDataSongQueryTest: test_song_returns_nil_for_unknown_id
+--------------------------------------------------------------------
+-------------------------------------------------------------------
+Songbase::AppDataSongQueryTest: test_song_returns_hash_for_known_id
+-------------------------------------------------------------------
+----------------------------------------------------------------
+Api::SongsControllerTest: test_pdf_is_not_found_for_missing_song
+----------------------------------------------------------------
+Started GET "/api/songs/999999/pdf" for 127.0.0.1 at 2026-05-04 01:18:41 -0500
+Processing by Api::SongsController#pdf as HTML
+  Parameters: {"id"=>"999999"}
+Completed 404 Not Found in 1ms (GC: 0.0ms)
+---------------------------------------------------------------
+Api::SongsControllerTest: test_show_is_not_found_for_missing_id
+---------------------------------------------------------------
+Started GET "/api/songs/999999" for 127.0.0.1 at 2026-05-04 01:18:41 -0500
+Processing by Api::SongsController#show as HTML
+  Parameters: {"id"=>"999999"}
+Completed 404 Not Found in 0ms (GC: 0.0ms)
+----------------------------------------------------------
+Api::SongsControllerTest: test_pdf_returns_application/pdf
+----------------------------------------------------------
+Started GET "/api/songs/303/pdf" for 127.0.0.1 at 2026-05-04 01:18:41 -0500
+Processing by Api::SongsController#pdf as HTML
+  Parameters: {"id"=>"303"}
+Sent data 303-father-abraham.pdf (0.1ms)
+Completed 200 OK in 0ms (Views: 0.0ms | GC: 0.0ms)
+-----------------------------------------------------
+Api::SongsControllerTest: test_show_returns_song_json
+-----------------------------------------------------
+Started GET "/api/songs/303" for 127.0.0.1 at 2026-05-04 01:18:41 -0500
+Processing by Api::SongsController#show as HTML
+  Parameters: {"id"=>"303"}
+Completed 200 OK in 0ms (Views: 0.0ms | GC: 0.0ms)
+-----------------------------------------------------------
+Api::SongsControllerTest: test_lookup_returns_songs_wrapper
+-----------------------------------------------------------
+Started POST "/api/songs/lookup" for 127.0.0.1 at 2026-05-04 01:18:41 -0500
+Processing by Api::SongsController#lookup as JSON
+  Parameters: {"ids"=>[304, 303], "song"=>{"ids"=>[304, 303]}}
+Completed 200 OK in 0ms (Views: 0.0ms | GC: 0.0ms)
+-----------------------------------------------------------
+Api::SongsControllerTest: test_lookup_rejects_non-array_ids
+-----------------------------------------------------------
+Started POST "/api/songs/lookup" for 127.0.0.1 at 2026-05-04 01:18:41 -0500
+Processing by Api::SongsController#lookup as JSON
+  Parameters: {"ids"=>"303", "song"=>{"ids"=>"303"}}
+Completed 422 Unprocessable Content in 0ms (Views: 0.0ms | GC: 0.0ms)
+----------------------------------------------------------------------------
+Songbase::SongPdfGeneratorTest: test_generate_passes_rendered_html_to_grover
+----------------------------------------------------------------------------
+----------------------------------------------------------------------------
+Songbase::SongPdfGeneratorTest: test_generate_passes_rendered_html_to_grover
+----------------------------------------------------------------------------
+  Rendering layout layouts/pdf.html.erb
+  Rendering pdf/songs/show.html.erb within layouts/pdf
+  Rendered pdf/songs/show.html.erb within layouts/pdf (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/pdf.html.erb (Duration: 0.2ms | GC: 0.0ms)
+-----------------------------------------------------------
+Api::SongsControllerTest: test_lookup_rejects_non-array_ids
+-----------------------------------------------------------
+Started POST "/api/songs/lookup" for 127.0.0.1 at 2026-05-04 01:19:19 -0500
+Processing by Api::SongsController#lookup as JSON
+  Parameters: {"ids"=>"303", "song"=>{"ids"=>"303"}}
+Completed 422 Unprocessable Content in 0ms (Views: 0.0ms | GC: 0.0ms)
+----------------------------------------------------------------
+Api::SongsControllerTest: test_pdf_is_not_found_for_missing_song
+----------------------------------------------------------------
+Started GET "/api/songs/999999/pdf" for 127.0.0.1 at 2026-05-04 01:19:19 -0500
+Processing by Api::SongsController#pdf as HTML
+  Parameters: {"id"=>"999999"}
+Completed 404 Not Found in 0ms (GC: 0.0ms)
+----------------------------------------------------------
+Api::SongsControllerTest: test_pdf_returns_application/pdf
+----------------------------------------------------------
+Started GET "/api/songs/303/pdf" for 127.0.0.1 at 2026-05-04 01:19:19 -0500
+Processing by Api::SongsController#pdf as HTML
+  Parameters: {"id"=>"303"}
+  Rendering layout layouts/pdf.html.erb
+  Rendering pdf/songs/show.html.erb within layouts/pdf
+  Rendered pdf/songs/show.html.erb within layouts/pdf (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/pdf.html.erb (Duration: 0.0ms | GC: 0.0ms)
+Sent data 303-father-abraham.pdf (0.1ms)
+Completed 200 OK in 0ms (Views: 0.0ms | GC: 0.0ms)
+---------------------------------------------------------------
+Api::SongsControllerTest: test_show_is_not_found_for_missing_id
+---------------------------------------------------------------
+Started GET "/api/songs/999999" for 127.0.0.1 at 2026-05-04 01:19:19 -0500
+Processing by Api::SongsController#show as HTML
+  Parameters: {"id"=>"999999"}
+Completed 404 Not Found in 0ms (GC: 0.0ms)
+-----------------------------------------------------------
+Api::SongsControllerTest: test_lookup_returns_songs_wrapper
+-----------------------------------------------------------
+Started POST "/api/songs/lookup" for 127.0.0.1 at 2026-05-04 01:19:19 -0500
+Processing by Api::SongsController#lookup as JSON
+  Parameters: {"ids"=>[304, 303], "song"=>{"ids"=>[304, 303]}}
+Completed 200 OK in 0ms (Views: 0.0ms | GC: 0.0ms)
+-----------------------------------------------------
+Api::SongsControllerTest: test_show_returns_song_json
+-----------------------------------------------------
+Started GET "/api/songs/303" for 127.0.0.1 at 2026-05-04 01:19:19 -0500
+Processing by Api::SongsController#show as HTML
+  Parameters: {"id"=>"303"}
+Completed 200 OK in 0ms (Views: 0.0ms | GC: 0.0ms)
+-------------------------------------------------------------------
+Songbase::AppDataSongQueryTest: test_song_returns_hash_for_known_id
+-------------------------------------------------------------------
+-----------------------------------------------------------------
+Songbase::AppDataSongQueryTest: test_songs_payload_wraps_like_API
+-----------------------------------------------------------------
+------------------------------------------------------------------------------------
+Songbase::AppDataSongQueryTest: test_songs_preserves_request_order_and_skips_unknown
+------------------------------------------------------------------------------------
+--------------------------------------------------------------------
+Songbase::AppDataSongQueryTest: test_song_returns_nil_for_unknown_id
+--------------------------------------------------------------------
+-----------------------------------------------------
+Api::SongsControllerTest: test_show_returns_song_json
+-----------------------------------------------------
+Started GET "/api/songs/303" for 127.0.0.1 at 2026-05-04 01:28:13 -0500
+Processing by Api::SongsController#show as HTML
+  Parameters: {"id"=>"303"}
+Completed 200 OK in 1ms (Views: 0.1ms | GC: 0.0ms)
+-----------------------------------------------------------
+Api::SongsControllerTest: test_lookup_rejects_non-array_ids
+-----------------------------------------------------------
+Started POST "/api/songs/lookup" for 127.0.0.1 at 2026-05-04 01:28:13 -0500
+Processing by Api::SongsController#lookup as JSON
+  Parameters: {"ids"=>"303", "song"=>{"ids"=>"303"}}
+Completed 422 Unprocessable Content in 0ms (Views: 0.0ms | GC: 0.0ms)
+----------------------------------------------------------
+Api::SongsControllerTest: test_pdf_returns_application/pdf
+----------------------------------------------------------
+Started GET "/api/songs/303/pdf" for 127.0.0.1 at 2026-05-04 01:28:13 -0500
+Processing by Api::SongsController#pdf as HTML
+  Parameters: {"id"=>"303"}
+  Rendering layout layouts/pdf.html.erb
+  Rendering pdf/songs/show.html.erb within layouts/pdf
+  Rendered pdf/songs/show.html.erb within layouts/pdf (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/pdf.html.erb (Duration: 0.2ms | GC: 0.0ms)
+Sent data 303-father-abraham.pdf (0.1ms)
+Completed 200 OK in 1ms (Views: 0.0ms | GC: 0.1ms)
+---------------------------------------------------------------
+Api::SongsControllerTest: test_show_is_not_found_for_missing_id
+---------------------------------------------------------------
+Started GET "/api/songs/999999" for 127.0.0.1 at 2026-05-04 01:28:13 -0500
+Processing by Api::SongsController#show as HTML
+  Parameters: {"id"=>"999999"}
+Completed 404 Not Found in 0ms (GC: 0.0ms)
+----------------------------------------------------------------
+Api::SongsControllerTest: test_pdf_is_not_found_for_missing_song
+----------------------------------------------------------------
+Started GET "/api/songs/999999/pdf" for 127.0.0.1 at 2026-05-04 01:28:13 -0500
+Processing by Api::SongsController#pdf as HTML
+  Parameters: {"id"=>"999999"}
+Completed 404 Not Found in 0ms (GC: 0.0ms)
+-----------------------------------------------------------
+Api::SongsControllerTest: test_lookup_returns_songs_wrapper
+-----------------------------------------------------------
+Started POST "/api/songs/lookup" for 127.0.0.1 at 2026-05-04 01:28:13 -0500
+Processing by Api::SongsController#lookup as JSON
+  Parameters: {"ids"=>[304, 303], "song"=>{"ids"=>[304, 303]}}
+Completed 200 OK in 0ms (Views: 0.0ms | GC: 0.0ms)
+-----------------------------------------------------------------
+Songbase::AppDataSongQueryTest: test_songs_payload_wraps_like_API
+-----------------------------------------------------------------
+-------------------------------------------------------------------
+Songbase::AppDataSongQueryTest: test_song_returns_hash_for_known_id
+-------------------------------------------------------------------
+--------------------------------------------------------------------
+Songbase::AppDataSongQueryTest: test_song_returns_nil_for_unknown_id
+--------------------------------------------------------------------
+------------------------------------------------------------------------------------
+Songbase::AppDataSongQueryTest: test_songs_preserves_request_order_and_skips_unknown
+------------------------------------------------------------------------------------
+-----------------------------------------------------------------
+Songbase::LyricsChordHtmlTest: test_stanza_numbers_and_meta_lines
+-----------------------------------------------------------------
+------------------------------------------------------------------------------
+Songbase::LyricsChordHtmlTest: test_chords_stack_above_following_text_segments
+------------------------------------------------------------------------------
+-------------------------------------------------------------------
+Songbase::LyricsChordHtmlTest: test_plain_prefix_before_first_chord
+-------------------------------------------------------------------
+---------------------------------------------------------------
+Songbase::LyricsChordHtmlTest: test_plain_line_without_brackets
+---------------------------------------------------------------
+--------------------------------------------------------------------
+Songbase::LyricsChordHtmlTest: test_empty_brackets_reserve_chord_row
+--------------------------------------------------------------------
+---------------------------------------------------------------
+Songbase::SongbookPdfGeneratorTest: test_raises_when_id_missing
+---------------------------------------------------------------
+------------------------------------------------------------------------------------------
+Songbase::SongbookPdfGeneratorTest: test_write_creates_tmp_pdf_and_orders_songs_by_id_list
+------------------------------------------------------------------------------------------
+  Rendering layout layouts/pdf_songbook.html.erb
+  Rendering pdf/songbook/show.html.erb within layouts/pdf_songbook
+  Rendered pdf/songbook/show.html.erb within layouts/pdf_songbook (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/pdf_songbook.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendering layout layouts/pdf_songbook.html.erb
+  Rendering pdf/songbook/show.html.erb within layouts/pdf_songbook
+  Rendered pdf/songbook/show.html.erb within layouts/pdf_songbook (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/pdf_songbook.html.erb (Duration: 0.0ms | GC: 0.0ms)
+----------------------------------------------------------------------------
+Songbase::SongPdfGeneratorTest: test_generate_passes_rendered_html_to_grover
+----------------------------------------------------------------------------
+  Rendering layout layouts/pdf.html.erb
+  Rendering pdf/songs/show.html.erb within layouts/pdf
+  Rendered pdf/songs/show.html.erb within layouts/pdf (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/pdf.html.erb (Duration: 0.0ms | GC: 0.0ms)
+------------------------------------------------------------------------------------------
+Songbase::SongbookPdfGeneratorTest: test_write_creates_tmp_pdf_and_orders_songs_by_id_list
+------------------------------------------------------------------------------------------
+  Rendering layout layouts/pdf_songbook.html.erb
+  Rendering pdf/songbook/show.html.erb within layouts/pdf_songbook
+  Rendered pdf/songbook/show.html.erb within layouts/pdf_songbook (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/pdf_songbook.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendering layout layouts/pdf_songbook.html.erb
+  Rendering pdf/songbook/show.html.erb within layouts/pdf_songbook
+  Rendered pdf/songbook/show.html.erb within layouts/pdf_songbook (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/pdf_songbook.html.erb (Duration: 0.1ms | GC: 0.0ms)
+---------------------------------------------------------------
+Songbase::SongbookPdfGeneratorTest: test_raises_when_id_missing
+---------------------------------------------------------------
+---------------------------------------------------------------
+Api::SongsControllerTest: test_show_is_not_found_for_missing_id
+---------------------------------------------------------------
+Started GET "/api/songs/999999" for 127.0.0.1 at 2026-05-04 01:28:27 -0500
+Processing by Api::SongsController#show as HTML
+  Parameters: {"id"=>"999999"}
+Completed 404 Not Found in 0ms (GC: 0.0ms)
+-----------------------------------------------------------
+Api::SongsControllerTest: test_lookup_returns_songs_wrapper
+-----------------------------------------------------------
+Started POST "/api/songs/lookup" for 127.0.0.1 at 2026-05-04 01:28:27 -0500
+Processing by Api::SongsController#lookup as JSON
+  Parameters: {"ids"=>[304, 303], "song"=>{"ids"=>[304, 303]}}
+Completed 200 OK in 0ms (Views: 0.0ms | GC: 0.0ms)
+-----------------------------------------------------------
+Api::SongsControllerTest: test_lookup_rejects_non-array_ids
+-----------------------------------------------------------
+Started POST "/api/songs/lookup" for 127.0.0.1 at 2026-05-04 01:28:27 -0500
+Processing by Api::SongsController#lookup as JSON
+  Parameters: {"ids"=>"303", "song"=>{"ids"=>"303"}}
+Completed 422 Unprocessable Content in 0ms (Views: 0.0ms | GC: 0.0ms)
+----------------------------------------------------------
+Api::SongsControllerTest: test_pdf_returns_application/pdf
+----------------------------------------------------------
+Started GET "/api/songs/303/pdf" for 127.0.0.1 at 2026-05-04 01:28:27 -0500
+Processing by Api::SongsController#pdf as HTML
+  Parameters: {"id"=>"303"}
+  Rendering layout layouts/pdf.html.erb
+  Rendering pdf/songs/show.html.erb within layouts/pdf
+  Rendered pdf/songs/show.html.erb within layouts/pdf (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/pdf.html.erb (Duration: 0.2ms | GC: 0.0ms)
+Sent data 303-father-abraham.pdf (0.1ms)
+Completed 200 OK in 1ms (Views: 0.0ms | GC: 0.0ms)
+-----------------------------------------------------
+Api::SongsControllerTest: test_show_returns_song_json
+-----------------------------------------------------
+Started GET "/api/songs/303" for 127.0.0.1 at 2026-05-04 01:28:27 -0500
+Processing by Api::SongsController#show as HTML
+  Parameters: {"id"=>"303"}
+Completed 200 OK in 0ms (Views: 0.0ms | GC: 0.0ms)
+----------------------------------------------------------------
+Api::SongsControllerTest: test_pdf_is_not_found_for_missing_song
+----------------------------------------------------------------
+Started GET "/api/songs/999999/pdf" for 127.0.0.1 at 2026-05-04 01:28:27 -0500
+Processing by Api::SongsController#pdf as HTML
+  Parameters: {"id"=>"999999"}
+Completed 404 Not Found in 0ms (GC: 0.0ms)
+----------------------------------------------------------------------------
+Songbase::SongPdfGeneratorTest: test_generate_passes_rendered_html_to_grover
+----------------------------------------------------------------------------
+  Rendering layout layouts/pdf.html.erb
+  Rendering pdf/songs/show.html.erb within layouts/pdf
+  Rendered pdf/songs/show.html.erb within layouts/pdf (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/pdf.html.erb (Duration: 0.0ms | GC: 0.0ms)
+-------------------------------------------------------------------
+Songbase::LyricsChordHtmlTest: test_plain_prefix_before_first_chord
+-------------------------------------------------------------------
+--------------------------------------------------------------------
+Songbase::LyricsChordHtmlTest: test_empty_brackets_reserve_chord_row
+--------------------------------------------------------------------
+------------------------------------------------------------------------------
+Songbase::LyricsChordHtmlTest: test_chords_stack_above_following_text_segments
+------------------------------------------------------------------------------
+-----------------------------------------------------------------
+Songbase::LyricsChordHtmlTest: test_stanza_numbers_and_meta_lines
+-----------------------------------------------------------------
+---------------------------------------------------------------
+Songbase::LyricsChordHtmlTest: test_plain_line_without_brackets
+---------------------------------------------------------------
+-------------------------------------------------------------------
+Songbase::AppDataSongQueryTest: test_song_returns_hash_for_known_id
+-------------------------------------------------------------------
+--------------------------------------------------------------------
+Songbase::AppDataSongQueryTest: test_song_returns_nil_for_unknown_id
+--------------------------------------------------------------------
+------------------------------------------------------------------------------------
+Songbase::AppDataSongQueryTest: test_songs_preserves_request_order_and_skips_unknown
+------------------------------------------------------------------------------------
+-----------------------------------------------------------------
+Songbase::AppDataSongQueryTest: test_songs_payload_wraps_like_API
+-----------------------------------------------------------------
+---------------------------------------------------------------
+Songbase::SongbookPdfGeneratorTest: test_raises_when_id_missing
+---------------------------------------------------------------
+------------------------------------------------------------------------------------------
+Songbase::SongbookPdfGeneratorTest: test_write_creates_tmp_pdf_and_orders_songs_by_id_list
+------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------
+Songbase::SongPdfGeneratorTest: test_generate_passes_rendered_html_to_grover
+----------------------------------------------------------------------------
+  Rendering layout layouts/pdf.html.erb
+  Rendering pdf/songs/show.html.erb within layouts/pdf
+  Rendered pdf/songs/show.html.erb within layouts/pdf (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/pdf.html.erb (Duration: 0.3ms | GC: 0.0ms)
+----------------------------------------------------------
+Api::SongsControllerTest: test_pdf_returns_application/pdf
+----------------------------------------------------------
+Started GET "/api/songs/303/pdf" for 127.0.0.1 at 2026-05-04 01:30:04 -0500
+Processing by Api::SongsController#pdf as HTML
+  Parameters: {"id"=>"303"}
+Completed 500 Internal Server Error in 0ms (GC: 0.0ms)
+-----------------------------------------------------------
+Api::SongsControllerTest: test_lookup_returns_songs_wrapper
+-----------------------------------------------------------
+Started POST "/api/songs/lookup" for 127.0.0.1 at 2026-05-04 01:30:04 -0500
+Processing by Api::SongsController#lookup as JSON
+  Parameters: {"ids"=>[304, 303], "song"=>{"ids"=>[304, 303]}}
+Completed 200 OK in 0ms (Views: 0.0ms | GC: 0.0ms)
+----------------------------------------------------------------
+Api::SongsControllerTest: test_pdf_is_not_found_for_missing_song
+----------------------------------------------------------------
+Started GET "/api/songs/999999/pdf" for 127.0.0.1 at 2026-05-04 01:30:04 -0500
+Processing by Api::SongsController#pdf as HTML
+  Parameters: {"id"=>"999999"}
+Completed 404 Not Found in 0ms (GC: 0.0ms)
+-----------------------------------------------------------
+Api::SongsControllerTest: test_lookup_rejects_non-array_ids
+-----------------------------------------------------------
+Started POST "/api/songs/lookup" for 127.0.0.1 at 2026-05-04 01:30:04 -0500
+Processing by Api::SongsController#lookup as JSON
+  Parameters: {"ids"=>"303", "song"=>{"ids"=>"303"}}
+Completed 422 Unprocessable Content in 0ms (Views: 0.0ms | GC: 0.0ms)
+-----------------------------------------------------
+Api::SongsControllerTest: test_show_returns_song_json
+-----------------------------------------------------
+Started GET "/api/songs/303" for 127.0.0.1 at 2026-05-04 01:30:04 -0500
+Processing by Api::SongsController#show as HTML
+  Parameters: {"id"=>"303"}
+Completed 200 OK in 0ms (Views: 0.0ms | GC: 0.0ms)
+---------------------------------------------------------------
+Api::SongsControllerTest: test_show_is_not_found_for_missing_id
+---------------------------------------------------------------
+Started GET "/api/songs/999999" for 127.0.0.1 at 2026-05-04 01:30:04 -0500
+Processing by Api::SongsController#show as HTML
+  Parameters: {"id"=>"999999"}
+Completed 404 Not Found in 0ms (GC: 0.0ms)
+---------------------------------------------------------------
+Songbase::LyricsChordHtmlTest: test_plain_line_without_brackets
+---------------------------------------------------------------
+--------------------------------------------------------------------
+Songbase::LyricsChordHtmlTest: test_empty_brackets_reserve_chord_row
+--------------------------------------------------------------------
+-------------------------------------------------------------------
+Songbase::LyricsChordHtmlTest: test_plain_prefix_before_first_chord
+-------------------------------------------------------------------
+------------------------------------------------------------------------------
+Songbase::LyricsChordHtmlTest: test_chords_stack_above_following_text_segments
+------------------------------------------------------------------------------
+-----------------------------------------------------------------
+Songbase::LyricsChordHtmlTest: test_stanza_numbers_and_meta_lines
+-----------------------------------------------------------------
+--------------------------------------------------------------------
+Songbase::AppDataSongQueryTest: test_song_returns_nil_for_unknown_id
+--------------------------------------------------------------------
+-----------------------------------------------------------------
+Songbase::AppDataSongQueryTest: test_songs_payload_wraps_like_API
+-----------------------------------------------------------------
+-------------------------------------------------------------------
+Songbase::AppDataSongQueryTest: test_song_returns_hash_for_known_id
+-------------------------------------------------------------------
+------------------------------------------------------------------------------------
+Songbase::AppDataSongQueryTest: test_songs_preserves_request_order_and_skips_unknown
+------------------------------------------------------------------------------------
+-----------------------------------------------------------
+Api::SongsControllerTest: test_lookup_rejects_non-array_ids
+-----------------------------------------------------------
+Started POST "/api/songs/lookup" for 127.0.0.1 at 2026-05-04 01:31:13 -0500
+Processing by Api::SongsController#lookup as JSON
+  Parameters: {"ids"=>"303", "song"=>{"ids"=>"303"}}
+Completed 422 Unprocessable Content in 1ms (Views: 0.0ms | GC: 0.0ms)
+----------------------------------------------------------------
+Api::SongsControllerTest: test_pdf_is_not_found_for_missing_song
+----------------------------------------------------------------
+Started GET "/api/songs/999999/pdf" for 127.0.0.1 at 2026-05-04 01:31:13 -0500
+Processing by Api::SongsController#pdf as HTML
+  Parameters: {"id"=>"999999"}
+Completed 404 Not Found in 0ms (GC: 0.0ms)
+-----------------------------------------------------------
+Api::SongsControllerTest: test_lookup_returns_songs_wrapper
+-----------------------------------------------------------
+Started POST "/api/songs/lookup" for 127.0.0.1 at 2026-05-04 01:31:13 -0500
+Processing by Api::SongsController#lookup as JSON
+  Parameters: {"ids"=>[304, 303], "song"=>{"ids"=>[304, 303]}}
+Completed 200 OK in 0ms (Views: 0.0ms | GC: 0.0ms)
+-----------------------------------------------------
+Api::SongsControllerTest: test_show_returns_song_json
+-----------------------------------------------------
+Started GET "/api/songs/303" for 127.0.0.1 at 2026-05-04 01:31:13 -0500
+Processing by Api::SongsController#show as HTML
+  Parameters: {"id"=>"303"}
+Completed 200 OK in 0ms (Views: 0.0ms | GC: 0.1ms)
+---------------------------------------------------------------
+Api::SongsControllerTest: test_show_is_not_found_for_missing_id
+---------------------------------------------------------------
+Started GET "/api/songs/999999" for 127.0.0.1 at 2026-05-04 01:31:13 -0500
+Processing by Api::SongsController#show as HTML
+  Parameters: {"id"=>"999999"}
+Completed 404 Not Found in 0ms (GC: 0.0ms)
+----------------------------------------------------------
+Api::SongsControllerTest: test_pdf_returns_application/pdf
+----------------------------------------------------------
+Started GET "/api/songs/303/pdf" for 127.0.0.1 at 2026-05-04 01:31:13 -0500
+Processing by Api::SongsController#pdf as HTML
+  Parameters: {"id"=>"303"}
+  Rendering layout layouts/pdf.html.erb
+  Rendering pdf/songs/show.html.erb within layouts/pdf
+  Rendered pdf/songs/show.html.erb within layouts/pdf (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/pdf.html.erb (Duration: 0.2ms | GC: 0.0ms)
+Sent data 303-father-abraham.pdf (0.1ms)
+Completed 200 OK in 1ms (Views: 0.0ms | GC: 0.0ms)
+---------------------------------------------------------------
+Songbase::LyricsChordHtmlTest: test_plain_line_without_brackets
+---------------------------------------------------------------
+--------------------------------------------------------------------
+Songbase::LyricsChordHtmlTest: test_empty_brackets_reserve_chord_row
+--------------------------------------------------------------------
+------------------------------------------------------------------------------
+Songbase::LyricsChordHtmlTest: test_chords_stack_above_following_text_segments
+------------------------------------------------------------------------------
+-----------------------------------------------------------------
+Songbase::LyricsChordHtmlTest: test_stanza_numbers_and_meta_lines
+-----------------------------------------------------------------
+-------------------------------------------------------------------
+Songbase::LyricsChordHtmlTest: test_plain_prefix_before_first_chord
+-------------------------------------------------------------------
+----------------------------------------------------------------------------
+Songbase::SongPdfGeneratorTest: test_generate_passes_rendered_html_to_grover
+----------------------------------------------------------------------------
+  Rendering layout layouts/pdf.html.erb
+  Rendering pdf/songs/show.html.erb within layouts/pdf
+  Rendered pdf/songs/show.html.erb within layouts/pdf (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/pdf.html.erb (Duration: 0.0ms | GC: 0.0ms)
+---------------------------------------------------------------
+Songbase::SongbookPdfGeneratorTest: test_raises_when_id_missing
+---------------------------------------------------------------
+------------------------------------------------------------------------------------------
+Songbase::SongbookPdfGeneratorTest: test_write_creates_tmp_pdf_and_orders_songs_by_id_list
+------------------------------------------------------------------------------------------
+  Rendering layout layouts/pdf_songbook.html.erb
+  Rendering pdf/songbook/show.html.erb within layouts/pdf_songbook
+  Rendered pdf/songbook/show.html.erb within layouts/pdf_songbook (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/pdf_songbook.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendering layout layouts/pdf_songbook.html.erb
+  Rendering pdf/songbook/show.html.erb within layouts/pdf_songbook
+  Rendered pdf/songbook/show.html.erb within layouts/pdf_songbook (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/pdf_songbook.html.erb (Duration: 0.1ms | GC: 0.0ms)
+-----------------------------------------------------------------
+Songbase::AppDataSongQueryTest: test_songs_payload_wraps_like_API
+-----------------------------------------------------------------
+--------------------------------------------------------------------
+Songbase::AppDataSongQueryTest: test_song_returns_nil_for_unknown_id
+--------------------------------------------------------------------
+-------------------------------------------------------------------
+Songbase::AppDataSongQueryTest: test_song_returns_hash_for_known_id
+-------------------------------------------------------------------
+------------------------------------------------------------------------------------
+Songbase::AppDataSongQueryTest: test_songs_preserves_request_order_and_skips_unknown
+------------------------------------------------------------------------------------
+--------------------------------------------------------------------
+Songbase::AppDataSongQueryTest: test_song_returns_nil_for_unknown_id
+--------------------------------------------------------------------
+------------------------------------------------------------------------------------
+Songbase::AppDataSongQueryTest: test_songs_preserves_request_order_and_skips_unknown
+------------------------------------------------------------------------------------
+-----------------------------------------------------------------
+Songbase::AppDataSongQueryTest: test_songs_payload_wraps_like_API
+-----------------------------------------------------------------
+-------------------------------------------------------------------
+Songbase::AppDataSongQueryTest: test_song_returns_hash_for_known_id
+-------------------------------------------------------------------
+-------------------------------------------------------------------
+Songbase::LyricsChordHtmlTest: test_plain_prefix_before_first_chord
+-------------------------------------------------------------------
+--------------------------------------------------------------------
+Songbase::LyricsChordHtmlTest: test_empty_brackets_reserve_chord_row
+--------------------------------------------------------------------
+----------------------------------------------------------------------------------
+Songbase::LyricsChordHtmlTest: test_stanza_number_on_same_line_as_first_lyric_line
+----------------------------------------------------------------------------------
+---------------------------------------------------------------
+Songbase::LyricsChordHtmlTest: test_plain_line_without_brackets
+---------------------------------------------------------------
+------------------------------------------------------------------------------
+Songbase::LyricsChordHtmlTest: test_chords_stack_above_following_text_segments
+------------------------------------------------------------------------------
+----------------------------------------------------------------------------
+Songbase::SongPdfGeneratorTest: test_generate_passes_rendered_html_to_grover
+----------------------------------------------------------------------------
+  Rendering layout layouts/pdf.html.erb
+  Rendering pdf/songs/show.html.erb within layouts/pdf
+  Rendered pdf/songs/show.html.erb within layouts/pdf (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/pdf.html.erb (Duration: 0.2ms | GC: 0.0ms)
+------------------------------------------------------------------------------------------
+Songbase::SongbookPdfGeneratorTest: test_write_creates_tmp_pdf_and_orders_songs_by_id_list
+------------------------------------------------------------------------------------------
+  Rendering layout layouts/pdf_songbook.html.erb
+  Rendering pdf/songbook/show.html.erb within layouts/pdf_songbook
+  Rendered pdf/songbook/show.html.erb within layouts/pdf_songbook (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/pdf_songbook.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendering layout layouts/pdf_songbook.html.erb
+  Rendering pdf/songbook/show.html.erb within layouts/pdf_songbook
+  Rendered pdf/songbook/show.html.erb within layouts/pdf_songbook (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/pdf_songbook.html.erb (Duration: 0.1ms | GC: 0.0ms)
+---------------------------------------------------------------
+Songbase::SongbookPdfGeneratorTest: test_raises_when_id_missing
+---------------------------------------------------------------
+-----------------------------------------------------------
+Api::SongsControllerTest: test_lookup_returns_songs_wrapper
+-----------------------------------------------------------
+Started POST "/api/songs/lookup" for 127.0.0.1 at 2026-05-04 01:47:00 -0500
+Processing by Api::SongsController#lookup as JSON
+  Parameters: {"ids"=>[304, 303], "song"=>{"ids"=>[304, 303]}}
+Completed 200 OK in 0ms (Views: 0.0ms | GC: 0.0ms)
+---------------------------------------------------------------
+Api::SongsControllerTest: test_show_is_not_found_for_missing_id
+---------------------------------------------------------------
+Started GET "/api/songs/999999" for 127.0.0.1 at 2026-05-04 01:47:00 -0500
+Processing by Api::SongsController#show as HTML
+  Parameters: {"id"=>"999999"}
+Completed 404 Not Found in 0ms (GC: 0.0ms)
+----------------------------------------------------------------
+Api::SongsControllerTest: test_pdf_is_not_found_for_missing_song
+----------------------------------------------------------------
+Started GET "/api/songs/999999/pdf" for 127.0.0.1 at 2026-05-04 01:47:00 -0500
+Processing by Api::SongsController#pdf as HTML
+  Parameters: {"id"=>"999999"}
+Completed 404 Not Found in 0ms (GC: 0.0ms)
+----------------------------------------------------------
+Api::SongsControllerTest: test_pdf_returns_application/pdf
+----------------------------------------------------------
+Started GET "/api/songs/303/pdf" for 127.0.0.1 at 2026-05-04 01:47:00 -0500
+Processing by Api::SongsController#pdf as HTML
+  Parameters: {"id"=>"303"}
+  Rendering layout layouts/pdf.html.erb
+  Rendering pdf/songs/show.html.erb within layouts/pdf
+  Rendered pdf/songs/show.html.erb within layouts/pdf (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/pdf.html.erb (Duration: 0.0ms | GC: 0.0ms)
+Sent data 303-father-abraham.pdf (0.1ms)
+Completed 200 OK in 0ms (Views: 0.0ms | GC: 0.0ms)
+-----------------------------------------------------
+Api::SongsControllerTest: test_show_returns_song_json
+-----------------------------------------------------
+Started GET "/api/songs/303" for 127.0.0.1 at 2026-05-04 01:47:00 -0500
+Processing by Api::SongsController#show as HTML
+  Parameters: {"id"=>"303"}
+Completed 200 OK in 0ms (Views: 0.0ms | GC: 0.0ms)
+-----------------------------------------------------------
+Api::SongsControllerTest: test_lookup_rejects_non-array_ids
+-----------------------------------------------------------
+Started POST "/api/songs/lookup" for 127.0.0.1 at 2026-05-04 01:47:00 -0500
+Processing by Api::SongsController#lookup as JSON
+  Parameters: {"ids"=>"303", "song"=>{"ids"=>"303"}}
+Completed 422 Unprocessable Content in 0ms (Views: 0.0ms | GC: 0.0ms)
+--------------------------------------------------------------------
+Songbase::LyricsChordHtmlTest: test_empty_brackets_reserve_chord_row
+--------------------------------------------------------------------
+----------------------------------------------------------------------------------
+Songbase::LyricsChordHtmlTest: test_stanza_number_on_same_line_as_first_lyric_line
+----------------------------------------------------------------------------------
+---------------------------------------------------------------
+Songbase::LyricsChordHtmlTest: test_plain_line_without_brackets
+---------------------------------------------------------------
+------------------------------------------------------------------------------
+Songbase::LyricsChordHtmlTest: test_chords_stack_above_following_text_segments
+------------------------------------------------------------------------------
+-------------------------------------------------------------------
+Songbase::LyricsChordHtmlTest: test_plain_prefix_before_first_chord
+-------------------------------------------------------------------
+--------------------------------------------------------------------
+Songbase::AppDataSongQueryTest: test_song_returns_nil_for_unknown_id
+--------------------------------------------------------------------
+-----------------------------------------------------------------
+Songbase::AppDataSongQueryTest: test_songs_payload_wraps_like_API
+-----------------------------------------------------------------
+-------------------------------------------------------------------
+Songbase::AppDataSongQueryTest: test_song_returns_hash_for_known_id
+-------------------------------------------------------------------
+------------------------------------------------------------------------------------
+Songbase::AppDataSongQueryTest: test_songs_preserves_request_order_and_skips_unknown
+------------------------------------------------------------------------------------
+----------------------------------------------------------------------------
+Songbase::SongPdfGeneratorTest: test_generate_passes_rendered_html_to_grover
+----------------------------------------------------------------------------
+  Rendering layout layouts/pdf.html.erb
+  Rendering pdf/songs/show.html.erb within layouts/pdf
+  Rendered pdf/songs/show.html.erb within layouts/pdf (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/pdf.html.erb (Duration: 0.3ms | GC: 0.0ms)
+-----------------------------------------------------------
+Api::SongsControllerTest: test_lookup_rejects_non-array_ids
+-----------------------------------------------------------
+Started POST "/api/songs/lookup" for 127.0.0.1 at 2026-05-04 01:47:55 -0500
+Processing by Api::SongsController#lookup as JSON
+  Parameters: {"ids"=>"303", "song"=>{"ids"=>"303"}}
+Completed 422 Unprocessable Content in 0ms (Views: 0.1ms | GC: 0.0ms)
+-----------------------------------------------------------
+Api::SongsControllerTest: test_lookup_returns_songs_wrapper
+-----------------------------------------------------------
+Started POST "/api/songs/lookup" for 127.0.0.1 at 2026-05-04 01:47:55 -0500
+Processing by Api::SongsController#lookup as JSON
+  Parameters: {"ids"=>[304, 303], "song"=>{"ids"=>[304, 303]}}
+Completed 200 OK in 0ms (Views: 0.0ms | GC: 0.0ms)
+-----------------------------------------------------
+Api::SongsControllerTest: test_show_returns_song_json
+-----------------------------------------------------
+Started GET "/api/songs/303" for 127.0.0.1 at 2026-05-04 01:47:55 -0500
+Processing by Api::SongsController#show as HTML
+  Parameters: {"id"=>"303"}
+Completed 200 OK in 0ms (Views: 0.0ms | GC: 0.0ms)
+----------------------------------------------------------------
+Api::SongsControllerTest: test_pdf_is_not_found_for_missing_song
+----------------------------------------------------------------
+Started GET "/api/songs/999999/pdf" for 127.0.0.1 at 2026-05-04 01:47:55 -0500
+Processing by Api::SongsController#pdf as HTML
+  Parameters: {"id"=>"999999"}
+Completed 404 Not Found in 0ms (GC: 0.0ms)
+---------------------------------------------------------------
+Api::SongsControllerTest: test_show_is_not_found_for_missing_id
+---------------------------------------------------------------
+Started GET "/api/songs/999999" for 127.0.0.1 at 2026-05-04 01:47:55 -0500
+Processing by Api::SongsController#show as HTML
+  Parameters: {"id"=>"999999"}
+Completed 404 Not Found in 0ms (GC: 0.0ms)
+----------------------------------------------------------
+Api::SongsControllerTest: test_pdf_returns_application/pdf
+----------------------------------------------------------
+Started GET "/api/songs/303/pdf" for 127.0.0.1 at 2026-05-04 01:47:55 -0500
+Processing by Api::SongsController#pdf as HTML
+  Parameters: {"id"=>"303"}
+  Rendering layout layouts/pdf.html.erb
+  Rendering pdf/songs/show.html.erb within layouts/pdf
+  Rendered pdf/songs/show.html.erb within layouts/pdf (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/pdf.html.erb (Duration: 0.0ms | GC: 0.0ms)
+Sent data 303-father-abraham.pdf (0.1ms)
+Completed 200 OK in 0ms (Views: 0.0ms | GC: 0.0ms)
+---------------------------------------------------------------
+Songbase::SongbookPdfGeneratorTest: test_raises_when_id_missing
+---------------------------------------------------------------
+------------------------------------------------------------------------------------------
+Songbase::SongbookPdfGeneratorTest: test_write_creates_tmp_pdf_and_orders_songs_by_id_list
+------------------------------------------------------------------------------------------
+  Rendering layout layouts/pdf_songbook.html.erb
+  Rendering pdf/songbook/show.html.erb within layouts/pdf_songbook
+  Rendered pdf/songbook/show.html.erb within layouts/pdf_songbook (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/pdf_songbook.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendering layout layouts/pdf_songbook.html.erb
+  Rendering pdf/songbook/show.html.erb within layouts/pdf_songbook
+  Rendered pdf/songbook/show.html.erb within layouts/pdf_songbook (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/pdf_songbook.html.erb (Duration: 0.0ms | GC: 0.0ms)
+---------------------------------------------------------------
+Songbase::LyricsChordHtmlTest: test_plain_line_without_brackets
+---------------------------------------------------------------
+----------------------------------------------------------------------------------
+Songbase::LyricsChordHtmlTest: test_stanza_number_on_same_line_as_first_lyric_line
+----------------------------------------------------------------------------------
+------------------------------------------------------------------------------
+Songbase::LyricsChordHtmlTest: test_chords_stack_above_following_text_segments
+------------------------------------------------------------------------------
+-----------------------------------------------------------------------
+Songbase::LyricsChordHtmlTest: test_stanza_merges_with_plain_first_line
+-----------------------------------------------------------------------
+--------------------------------------------------------------------
+Songbase::LyricsChordHtmlTest: test_empty_brackets_reserve_chord_row
+--------------------------------------------------------------------
+-------------------------------------------------------------------
+Songbase::LyricsChordHtmlTest: test_plain_prefix_before_first_chord
+-------------------------------------------------------------------
+----------------------------------------------------------------------------
+Songbase::SongPdfGeneratorTest: test_generate_passes_rendered_html_to_grover
+----------------------------------------------------------------------------
+  Rendering layout layouts/pdf.html.erb
+  Rendering pdf/songs/show.html.erb within layouts/pdf
+  Rendered pdf/songs/show.html.erb within layouts/pdf (Duration: 0.2ms | GC: 0.1ms)
+  Rendered layout layouts/pdf.html.erb (Duration: 0.3ms | GC: 0.1ms)
+---------------------------------------------------------------
+Songbase::SongbookPdfGeneratorTest: test_raises_when_id_missing
+---------------------------------------------------------------
+------------------------------------------------------------------------------------------
+Songbase::SongbookPdfGeneratorTest: test_write_creates_tmp_pdf_and_orders_songs_by_id_list
+------------------------------------------------------------------------------------------
+  Rendering layout layouts/pdf_songbook.html.erb
+  Rendering pdf/songbook/show.html.erb within layouts/pdf_songbook
+  Rendered pdf/songbook/show.html.erb within layouts/pdf_songbook (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/pdf_songbook.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendering layout layouts/pdf_songbook.html.erb
+  Rendering pdf/songbook/show.html.erb within layouts/pdf_songbook
+  Rendered pdf/songbook/show.html.erb within layouts/pdf_songbook (Duration: 0.1ms | GC: 0.1ms)
+  Rendered layout layouts/pdf_songbook.html.erb (Duration: 0.1ms | GC: 0.1ms)
+-------------------------------------------------------------------
+Songbase::AppDataSongQueryTest: test_song_returns_hash_for_known_id
+-------------------------------------------------------------------
+--------------------------------------------------------------------
+Songbase::AppDataSongQueryTest: test_song_returns_nil_for_unknown_id
+--------------------------------------------------------------------
+-----------------------------------------------------------------
+Songbase::AppDataSongQueryTest: test_songs_payload_wraps_like_API
+-----------------------------------------------------------------
+------------------------------------------------------------------------------------
+Songbase::AppDataSongQueryTest: test_songs_preserves_request_order_and_skips_unknown
+------------------------------------------------------------------------------------
+--------------------------------------------------------------------
+Songbase::LyricsChordHtmlTest: test_empty_brackets_reserve_chord_row
+--------------------------------------------------------------------
+-------------------------------------------------------------------
+Songbase::LyricsChordHtmlTest: test_plain_prefix_before_first_chord
+-------------------------------------------------------------------
+------------------------------------------------------------------------------
+Songbase::LyricsChordHtmlTest: test_chords_stack_above_following_text_segments
+------------------------------------------------------------------------------
+---------------------------------------------------------------
+Songbase::LyricsChordHtmlTest: test_plain_line_without_brackets
+---------------------------------------------------------------
+----------------------------------------------------------------------------------------------------
+Songbase::LyricsChordHtmlTest: test_blank_before_indented_chorus_adds_section_break_and_chorus_block
+----------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------
+Songbase::LyricsChordHtmlTest: test_blank_between_verse_lines_does_not_add_section_break
+----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------
+Songbase::LyricsChordHtmlTest: test_stanza_merges_with_plain_first_line
+-----------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------
+Songbase::LyricsChordHtmlTest: test_stanza_number_shares_row_with_first_line_and_aligns_continuations
+-----------------------------------------------------------------------------------------------------
+----------------------------------------------------------
+Api::SongsControllerTest: test_pdf_returns_application/pdf
+----------------------------------------------------------
+Started GET "/api/songs/303/pdf" for 127.0.0.1 at 2026-05-04 02:01:42 -0500
+Processing by Api::SongsController#pdf as HTML
+  Parameters: {"id"=>"303"}
+  Rendering layout layouts/pdf.html.erb
+  Rendering pdf/songs/show.html.erb within layouts/pdf
+  Rendered pdf/songs/show.html.erb within layouts/pdf (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/pdf.html.erb (Duration: 0.1ms | GC: 0.0ms)
+Sent data 303-father-abraham.pdf (0.1ms)
+Completed 200 OK in 0ms (Views: 0.0ms | GC: 0.0ms)
+-----------------------------------------------------
+Api::SongsControllerTest: test_show_returns_song_json
+-----------------------------------------------------
+Started GET "/api/songs/303" for 127.0.0.1 at 2026-05-04 02:01:42 -0500
+Processing by Api::SongsController#show as HTML
+  Parameters: {"id"=>"303"}
+Completed 200 OK in 0ms (Views: 0.0ms | GC: 0.0ms)
+----------------------------------------------------------------
+Api::SongsControllerTest: test_pdf_is_not_found_for_missing_song
+----------------------------------------------------------------
+Started GET "/api/songs/999999/pdf" for 127.0.0.1 at 2026-05-04 02:01:42 -0500
+Processing by Api::SongsController#pdf as HTML
+  Parameters: {"id"=>"999999"}
+Completed 404 Not Found in 0ms (GC: 0.0ms)
+---------------------------------------------------------------
+Api::SongsControllerTest: test_show_is_not_found_for_missing_id
+---------------------------------------------------------------
+Started GET "/api/songs/999999" for 127.0.0.1 at 2026-05-04 02:01:42 -0500
+Processing by Api::SongsController#show as HTML
+  Parameters: {"id"=>"999999"}
+Completed 404 Not Found in 0ms (GC: 0.0ms)
+-----------------------------------------------------------
+Api::SongsControllerTest: test_lookup_rejects_non-array_ids
+-----------------------------------------------------------
+Started POST "/api/songs/lookup" for 127.0.0.1 at 2026-05-04 02:01:42 -0500
+Processing by Api::SongsController#lookup as JSON
+  Parameters: {"ids"=>"303", "song"=>{"ids"=>"303"}}
+Completed 422 Unprocessable Content in 0ms (Views: 0.0ms | GC: 0.0ms)
+-----------------------------------------------------------
+Api::SongsControllerTest: test_lookup_returns_songs_wrapper
+-----------------------------------------------------------
+Started POST "/api/songs/lookup" for 127.0.0.1 at 2026-05-04 02:01:42 -0500
+Processing by Api::SongsController#lookup as JSON
+  Parameters: {"ids"=>[304, 303], "song"=>{"ids"=>[304, 303]}}
+Completed 200 OK in 0ms (Views: 0.0ms | GC: 0.0ms)
+---------------------------------------------------------------
+Songbase::SongbookPdfGeneratorTest: test_raises_when_id_missing
+---------------------------------------------------------------
+------------------------------------------------------------------------------------------
+Songbase::SongbookPdfGeneratorTest: test_write_creates_tmp_pdf_and_orders_songs_by_id_list
+------------------------------------------------------------------------------------------
+  Rendering layout layouts/pdf_songbook.html.erb
+  Rendering pdf/songbook/show.html.erb within layouts/pdf_songbook
+  Rendered pdf/songbook/show.html.erb within layouts/pdf_songbook (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/pdf_songbook.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendering layout layouts/pdf_songbook.html.erb
+  Rendering pdf/songbook/show.html.erb within layouts/pdf_songbook
+  Rendered pdf/songbook/show.html.erb within layouts/pdf_songbook (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/pdf_songbook.html.erb (Duration: 0.1ms | GC: 0.0ms)
+-----------------------------------------------------------
+Api::SongsControllerTest: test_lookup_rejects_non-array_ids
+-----------------------------------------------------------
+Started POST "/api/songs/lookup" for 127.0.0.1 at 2026-05-04 02:08:14 -0500
+Processing by Api::SongsController#lookup as JSON
+  Parameters: {"ids"=>"303", "song"=>{"ids"=>"303"}}
+Completed 422 Unprocessable Content in 0ms (Views: 0.0ms | GC: 0.0ms)
+-----------------------------------------------------
+Api::SongsControllerTest: test_show_returns_song_json
+-----------------------------------------------------
+Started GET "/api/songs/303" for 127.0.0.1 at 2026-05-04 02:08:14 -0500
+Processing by Api::SongsController#show as HTML
+  Parameters: {"id"=>"303"}
+Completed 200 OK in 0ms (Views: 0.0ms | GC: 0.0ms)
+---------------------------------------------------------------
+Api::SongsControllerTest: test_show_is_not_found_for_missing_id
+---------------------------------------------------------------
+Started GET "/api/songs/999999" for 127.0.0.1 at 2026-05-04 02:08:14 -0500
+Processing by Api::SongsController#show as HTML
+  Parameters: {"id"=>"999999"}
+Completed 404 Not Found in 0ms (GC: 0.0ms)
+----------------------------------------------------------------
+Api::SongsControllerTest: test_pdf_is_not_found_for_missing_song
+----------------------------------------------------------------
+Started GET "/api/songs/999999/pdf" for 127.0.0.1 at 2026-05-04 02:08:14 -0500
+Processing by Api::SongsController#pdf as HTML
+  Parameters: {"id"=>"999999"}
+Completed 404 Not Found in 0ms (GC: 0.0ms)
+----------------------------------------------------------
+Api::SongsControllerTest: test_pdf_returns_application/pdf
+----------------------------------------------------------
+Started GET "/api/songs/303/pdf" for 127.0.0.1 at 2026-05-04 02:08:14 -0500
+Processing by Api::SongsController#pdf as HTML
+  Parameters: {"id"=>"303"}
+  Rendering layout layouts/pdf.html.erb
+  Rendering pdf/songs/show.html.erb within layouts/pdf
+  Rendered pdf/songs/show.html.erb within layouts/pdf (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/pdf.html.erb (Duration: 0.2ms | GC: 0.0ms)
+Sent data 303-father-abraham.pdf (0.1ms)
+Completed 200 OK in 1ms (Views: 0.0ms | GC: 0.0ms)
+-----------------------------------------------------------
+Api::SongsControllerTest: test_lookup_returns_songs_wrapper
+-----------------------------------------------------------
+Started POST "/api/songs/lookup" for 127.0.0.1 at 2026-05-04 02:08:14 -0500
+Processing by Api::SongsController#lookup as JSON
+  Parameters: {"ids"=>[304, 303], "song"=>{"ids"=>[304, 303]}}
+Completed 200 OK in 0ms (Views: 0.0ms | GC: 0.0ms)
+---------------------------------------------------------------
+Songbase::LyricsChordHtmlTest: test_plain_line_without_brackets
+---------------------------------------------------------------
+-----------------------------------------------------------------------
+Songbase::LyricsChordHtmlTest: test_stanza_merges_with_plain_first_line
+-----------------------------------------------------------------------
+-------------------------------------------------------------------
+Songbase::LyricsChordHtmlTest: test_plain_prefix_before_first_chord
+-------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------
+Songbase::LyricsChordHtmlTest: test_blank_before_indented_chorus_adds_section_break_and_chorus_block
+----------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------
+Songbase::LyricsChordHtmlTest: test_chords_stack_above_following_text_segments
+------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------
+Songbase::LyricsChordHtmlTest: test_stanza_number_shares_row_with_first_line_and_aligns_continuations
+-----------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------
+Songbase::LyricsChordHtmlTest: test_empty_brackets_reserve_chord_row
+--------------------------------------------------------------------
+----------------------------------------------------------------------------------------
+Songbase::LyricsChordHtmlTest: test_blank_between_verse_lines_does_not_add_section_break
+----------------------------------------------------------------------------------------
+----------------------------------------------------------------------------
+Songbase::SongPdfGeneratorTest: test_generate_passes_rendered_html_to_grover
+----------------------------------------------------------------------------
+  Rendering layout layouts/pdf.html.erb
+  Rendering pdf/songs/show.html.erb within layouts/pdf
+  Rendered pdf/songs/show.html.erb within layouts/pdf (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/pdf.html.erb (Duration: 0.0ms | GC: 0.0ms)
+-------------------------------------------------------------------
+Songbase::AppDataSongQueryTest: test_song_returns_hash_for_known_id
+-------------------------------------------------------------------
+------------------------------------------------------------------------------------
+Songbase::AppDataSongQueryTest: test_songs_preserves_request_order_and_skips_unknown
+------------------------------------------------------------------------------------
+-----------------------------------------------------------------
+Songbase::AppDataSongQueryTest: test_songs_payload_wraps_like_API
+-----------------------------------------------------------------
+--------------------------------------------------------------------
+Songbase::AppDataSongQueryTest: test_song_returns_nil_for_unknown_id
+--------------------------------------------------------------------
+-------------------------------------------------------------------
+Songbase::AppDataSongQueryTest: test_song_returns_hash_for_known_id
+-------------------------------------------------------------------
+-----------------------------------------------------------------
+Songbase::AppDataSongQueryTest: test_songs_payload_wraps_like_API
+-----------------------------------------------------------------
+------------------------------------------------------------------------------------
+Songbase::AppDataSongQueryTest: test_songs_preserves_request_order_and_skips_unknown
+------------------------------------------------------------------------------------
+--------------------------------------------------------------------
+Songbase::AppDataSongQueryTest: test_song_returns_nil_for_unknown_id
+--------------------------------------------------------------------
+-----------------------------------------------------------
+Api::SongsControllerTest: test_lookup_rejects_non-array_ids
+-----------------------------------------------------------
+Started POST "/api/songs/lookup" for 127.0.0.1 at 2026-05-04 02:19:24 -0500
+Processing by Api::SongsController#lookup as JSON
+  Parameters: {"ids"=>"303", "song"=>{"ids"=>"303"}}
+Completed 422 Unprocessable Content in 1ms (Views: 0.1ms | GC: 0.0ms)
+---------------------------------------------------------------
+Api::SongsControllerTest: test_show_is_not_found_for_missing_id
+---------------------------------------------------------------
+Started GET "/api/songs/999999" for 127.0.0.1 at 2026-05-04 02:19:24 -0500
+Processing by Api::SongsController#show as HTML
+  Parameters: {"id"=>"999999"}
+Completed 404 Not Found in 0ms (GC: 0.0ms)
+----------------------------------------------------------------
+Api::SongsControllerTest: test_pdf_is_not_found_for_missing_song
+----------------------------------------------------------------
+Started GET "/api/songs/999999/pdf" for 127.0.0.1 at 2026-05-04 02:19:24 -0500
+Processing by Api::SongsController#pdf as HTML
+  Parameters: {"id"=>"999999"}
+Completed 404 Not Found in 0ms (GC: 0.0ms)
+----------------------------------------------------------
+Api::SongsControllerTest: test_pdf_returns_application/pdf
+----------------------------------------------------------
+Started GET "/api/songs/303/pdf" for 127.0.0.1 at 2026-05-04 02:19:24 -0500
+Processing by Api::SongsController#pdf as HTML
+  Parameters: {"id"=>"303"}
+  Rendering layout layouts/pdf.html.erb
+  Rendering pdf/songs/show.html.erb within layouts/pdf
+  Rendered pdf/songs/show.html.erb within layouts/pdf (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/pdf.html.erb (Duration: 0.2ms | GC: 0.0ms)
+Sent data 303-father-abraham.pdf (0.1ms)
+Completed 200 OK in 1ms (Views: 0.0ms | GC: 0.0ms)
+-----------------------------------------------------
+Api::SongsControllerTest: test_show_returns_song_json
+-----------------------------------------------------
+Started GET "/api/songs/303" for 127.0.0.1 at 2026-05-04 02:19:24 -0500
+Processing by Api::SongsController#show as HTML
+  Parameters: {"id"=>"303"}
+Completed 200 OK in 0ms (Views: 0.0ms | GC: 0.0ms)
+-----------------------------------------------------------
+Api::SongsControllerTest: test_lookup_returns_songs_wrapper
+-----------------------------------------------------------
+Started POST "/api/songs/lookup" for 127.0.0.1 at 2026-05-04 02:19:24 -0500
+Processing by Api::SongsController#lookup as JSON
+  Parameters: {"ids"=>[304, 303], "song"=>{"ids"=>[304, 303]}}
+Completed 200 OK in 0ms (Views: 0.0ms | GC: 0.0ms)
+----------------------------------------------------------------------------------------------------
+Songbase::LyricsChordHtmlTest: test_blank_before_indented_chorus_adds_section_break_and_chorus_block
+----------------------------------------------------------------------------------------------------
+---------------------------------------------------------------
+Songbase::LyricsChordHtmlTest: test_plain_line_without_brackets
+---------------------------------------------------------------
+-----------------------------------------------------------------------
+Songbase::LyricsChordHtmlTest: test_stanza_merges_with_plain_first_line
+-----------------------------------------------------------------------
+-------------------------------------------------------------------
+Songbase::LyricsChordHtmlTest: test_plain_prefix_before_first_chord
+-------------------------------------------------------------------
+------------------------------------------------------------------------------
+Songbase::LyricsChordHtmlTest: test_chords_stack_above_following_text_segments
+------------------------------------------------------------------------------
+--------------------------------------------------------------------
+Songbase::LyricsChordHtmlTest: test_empty_brackets_reserve_chord_row
+--------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------
+Songbase::LyricsChordHtmlTest: test_stanza_number_shares_row_with_first_line_and_aligns_continuations
+-----------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------
+Songbase::LyricsChordHtmlTest: test_blank_between_verse_lines_does_not_add_section_break
+----------------------------------------------------------------------------------------
+---------------------------------------------------------------
+Songbase::SongbookPdfGeneratorTest: test_raises_when_id_missing
+---------------------------------------------------------------
+------------------------------------------------------------------------------------------
+Songbase::SongbookPdfGeneratorTest: test_write_creates_tmp_pdf_and_orders_songs_by_id_list
+------------------------------------------------------------------------------------------
+  Rendering layout layouts/pdf_songbook.html.erb
+  Rendering pdf/songbook/show.html.erb within layouts/pdf_songbook
+  Rendered pdf/songbook/show.html.erb within layouts/pdf_songbook (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/pdf_songbook.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendering layout layouts/pdf_songbook.html.erb
+  Rendering pdf/songbook/show.html.erb within layouts/pdf_songbook
+  Rendered pdf/songbook/show.html.erb within layouts/pdf_songbook (Duration: 0.2ms | GC: 0.1ms)
+  Rendered layout layouts/pdf_songbook.html.erb (Duration: 0.2ms | GC: 0.1ms)
+----------------------------------------------------------------------------
+Songbase::SongPdfGeneratorTest: test_generate_passes_rendered_html_to_grover
+----------------------------------------------------------------------------
+  Rendering layout layouts/pdf.html.erb
+  Rendering pdf/songs/show.html.erb within layouts/pdf
+  Rendered pdf/songs/show.html.erb within layouts/pdf (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/pdf.html.erb (Duration: 0.0ms | GC: 0.0ms)
+--------------------------------------------------------------------
+Songbase::AppDataSongQueryTest: test_song_returns_nil_for_unknown_id
+--------------------------------------------------------------------
+------------------------------------------------------------------------------------
+Songbase::AppDataSongQueryTest: test_songs_preserves_request_order_and_skips_unknown
+------------------------------------------------------------------------------------
+-------------------------------------------------------------------
+Songbase::AppDataSongQueryTest: test_song_returns_hash_for_known_id
+-------------------------------------------------------------------
+-----------------------------------------------------------------
+Songbase::AppDataSongQueryTest: test_songs_payload_wraps_like_API
+-----------------------------------------------------------------
+------------------------------------------------------------------------------------------
+Songbase::SongbookPdfGeneratorTest: test_write_creates_tmp_pdf_and_orders_songs_by_id_list
+------------------------------------------------------------------------------------------
+  Rendering layout layouts/pdf_songbook.html.erb
+  Rendering pdf/songbook/show.html.erb within layouts/pdf_songbook
+  Rendered pdf/songbook/show.html.erb within layouts/pdf_songbook (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/pdf_songbook.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendering layout layouts/pdf_songbook.html.erb
+  Rendering pdf/songbook/show.html.erb within layouts/pdf_songbook
+  Rendered pdf/songbook/show.html.erb within layouts/pdf_songbook (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/pdf_songbook.html.erb (Duration: 0.1ms | GC: 0.0ms)
+---------------------------------------------------------------
+Songbase::SongbookPdfGeneratorTest: test_raises_when_id_missing
+---------------------------------------------------------------
+----------------------------------------------------------------
+Api::SongsControllerTest: test_pdf_is_not_found_for_missing_song
+----------------------------------------------------------------
+Started GET "/api/songs/999999/pdf" for 127.0.0.1 at 2026-05-04 02:23:48 -0500
+Processing by Api::SongsController#pdf as HTML
+  Parameters: {"id"=>"999999"}
+Completed 404 Not Found in 0ms (GC: 0.0ms)
+-----------------------------------------------------------
+Api::SongsControllerTest: test_lookup_returns_songs_wrapper
+-----------------------------------------------------------
+Started POST "/api/songs/lookup" for 127.0.0.1 at 2026-05-04 02:23:48 -0500
+Processing by Api::SongsController#lookup as JSON
+  Parameters: {"ids"=>[304, 303], "song"=>{"ids"=>[304, 303]}}
+Completed 200 OK in 0ms (Views: 0.0ms | GC: 0.0ms)
+----------------------------------------------------------
+Api::SongsControllerTest: test_pdf_returns_application/pdf
+----------------------------------------------------------
+Started GET "/api/songs/303/pdf" for 127.0.0.1 at 2026-05-04 02:23:48 -0500
+Processing by Api::SongsController#pdf as HTML
+  Parameters: {"id"=>"303"}
+  Rendering layout layouts/pdf.html.erb
+  Rendering pdf/songs/show.html.erb within layouts/pdf
+  Rendered pdf/songs/show.html.erb within layouts/pdf (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/pdf.html.erb (Duration: 0.1ms | GC: 0.0ms)
+Sent data 303-father-abraham.pdf (0.1ms)
+Completed 200 OK in 1ms (Views: 0.0ms | GC: 0.0ms)
+-----------------------------------------------------
+Api::SongsControllerTest: test_show_returns_song_json
+-----------------------------------------------------
+Started GET "/api/songs/303" for 127.0.0.1 at 2026-05-04 02:23:48 -0500
+Processing by Api::SongsController#show as HTML
+  Parameters: {"id"=>"303"}
+Completed 200 OK in 0ms (Views: 0.0ms | GC: 0.0ms)
+-----------------------------------------------------------
+Api::SongsControllerTest: test_lookup_rejects_non-array_ids
+-----------------------------------------------------------
+Started POST "/api/songs/lookup" for 127.0.0.1 at 2026-05-04 02:23:48 -0500
+Processing by Api::SongsController#lookup as JSON
+  Parameters: {"ids"=>"303", "song"=>{"ids"=>"303"}}
+Completed 422 Unprocessable Content in 0ms (Views: 0.0ms | GC: 0.0ms)
+---------------------------------------------------------------
+Api::SongsControllerTest: test_show_is_not_found_for_missing_id
+---------------------------------------------------------------
+Started GET "/api/songs/999999" for 127.0.0.1 at 2026-05-04 02:23:48 -0500
+Processing by Api::SongsController#show as HTML
+  Parameters: {"id"=>"999999"}
+Completed 404 Not Found in 0ms (GC: 0.0ms)
+----------------------------------------------------------------------------
+Songbase::SongPdfGeneratorTest: test_generate_passes_rendered_html_to_grover
+----------------------------------------------------------------------------
+  Rendering layout layouts/pdf.html.erb
+  Rendering pdf/songs/show.html.erb within layouts/pdf
+  Rendered pdf/songs/show.html.erb within layouts/pdf (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/pdf.html.erb (Duration: 0.0ms | GC: 0.0ms)
+------------------------------------------------------------------------------
+Songbase::LyricsChordHtmlTest: test_chords_stack_above_following_text_segments
+------------------------------------------------------------------------------
+--------------------------------------------------------------------
+Songbase::LyricsChordHtmlTest: test_empty_brackets_reserve_chord_row
+--------------------------------------------------------------------
+----------------------------------------------------------------------------------------
+Songbase::LyricsChordHtmlTest: test_blank_between_verse_lines_does_not_add_section_break
+----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------
+Songbase::LyricsChordHtmlTest: test_stanza_number_shares_row_with_first_line_and_aligns_continuations
+-----------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------
+Songbase::LyricsChordHtmlTest: test_plain_prefix_before_first_chord
+-------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------
+Songbase::LyricsChordHtmlTest: test_blank_before_indented_chorus_adds_section_break_and_chorus_block
+----------------------------------------------------------------------------------------------------
+---------------------------------------------------------------
+Songbase::LyricsChordHtmlTest: test_plain_line_without_brackets
+---------------------------------------------------------------
+-----------------------------------------------------------------------
+Songbase::LyricsChordHtmlTest: test_stanza_merges_with_plain_first_line
+-----------------------------------------------------------------------
+-----------------------------------------------------------
+Api::SongsControllerTest: test_lookup_returns_songs_wrapper
+-----------------------------------------------------------
+Started POST "/api/songs/lookup" for 127.0.0.1 at 2026-05-04 02:31:40 -0500
+Processing by Api::SongsController#lookup as JSON
+  Parameters: {"ids"=>[304, 303], "song"=>{"ids"=>[304, 303]}}
+Completed 200 OK in 1ms (Views: 0.1ms | GC: 0.0ms)
+----------------------------------------------------------
+Api::SongsControllerTest: test_pdf_returns_application/pdf
+----------------------------------------------------------
+Started GET "/api/songs/303/pdf" for 127.0.0.1 at 2026-05-04 02:31:40 -0500
+Processing by Api::SongsController#pdf as HTML
+  Parameters: {"id"=>"303"}
+  Rendering layout layouts/pdf.html.erb
+  Rendering pdf/songs/show.html.erb within layouts/pdf
+  Rendered pdf/songs/show.html.erb within layouts/pdf (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/pdf.html.erb (Duration: 0.2ms | GC: 0.0ms)
+Sent data 303-father-abraham.pdf (0.1ms)
+Completed 200 OK in 1ms (Views: 0.0ms | GC: 0.0ms)
+-----------------------------------------------------------
+Api::SongsControllerTest: test_lookup_rejects_non-array_ids
+-----------------------------------------------------------
+Started POST "/api/songs/lookup" for 127.0.0.1 at 2026-05-04 02:31:40 -0500
+Processing by Api::SongsController#lookup as JSON
+  Parameters: {"ids"=>"303", "song"=>{"ids"=>"303"}}
+Completed 422 Unprocessable Content in 0ms (Views: 0.0ms | GC: 0.0ms)
+-----------------------------------------------------
+Api::SongsControllerTest: test_show_returns_song_json
+-----------------------------------------------------
+Started GET "/api/songs/303" for 127.0.0.1 at 2026-05-04 02:31:40 -0500
+Processing by Api::SongsController#show as HTML
+  Parameters: {"id"=>"303"}
+Completed 200 OK in 0ms (Views: 0.0ms | GC: 0.0ms)
+----------------------------------------------------------------
+Api::SongsControllerTest: test_pdf_is_not_found_for_missing_song
+----------------------------------------------------------------
+Started GET "/api/songs/999999/pdf" for 127.0.0.1 at 2026-05-04 02:31:40 -0500
+Processing by Api::SongsController#pdf as HTML
+  Parameters: {"id"=>"999999"}
+Completed 404 Not Found in 0ms (GC: 0.0ms)
+---------------------------------------------------------------
+Api::SongsControllerTest: test_show_is_not_found_for_missing_id
+---------------------------------------------------------------
+Started GET "/api/songs/999999" for 127.0.0.1 at 2026-05-04 02:31:40 -0500
+Processing by Api::SongsController#show as HTML
+  Parameters: {"id"=>"999999"}
+Completed 404 Not Found in 0ms (GC: 0.0ms)
+--------------------------------------------------------------------
+Songbase::AppDataSongQueryTest: test_song_returns_nil_for_unknown_id
+--------------------------------------------------------------------
+------------------------------------------------------------------------------------
+Songbase::AppDataSongQueryTest: test_songs_preserves_request_order_and_skips_unknown
+------------------------------------------------------------------------------------
+-------------------------------------------------------------------
+Songbase::AppDataSongQueryTest: test_song_returns_hash_for_known_id
+-------------------------------------------------------------------
+-----------------------------------------------------------------
+Songbase::AppDataSongQueryTest: test_songs_payload_wraps_like_API
+-----------------------------------------------------------------
+----------------------------------------------------------------------------------------
+Songbase::LyricsChordHtmlTest: test_blank_between_verse_lines_does_not_add_section_break
+----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------
+Songbase::LyricsChordHtmlTest: test_stanza_number_on_first_line_only_continuation_is_full_width
+-----------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------
+Songbase::LyricsChordHtmlTest: test_blank_before_indented_chorus_adds_section_break_and_chorus_block
+----------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------
+Songbase::LyricsChordHtmlTest: test_empty_brackets_reserve_chord_row
+--------------------------------------------------------------------
+-------------------------------------------------------------------
+Songbase::LyricsChordHtmlTest: test_plain_prefix_before_first_chord
+-------------------------------------------------------------------
+------------------------------------------------------------------------------
+Songbase::LyricsChordHtmlTest: test_chords_stack_above_following_text_segments
+------------------------------------------------------------------------------
+---------------------------------------------------------------
+Songbase::LyricsChordHtmlTest: test_plain_line_without_brackets
+---------------------------------------------------------------
+-----------------------------------------------------------------------
+Songbase::LyricsChordHtmlTest: test_stanza_merges_with_plain_first_line
+-----------------------------------------------------------------------
+----------------------------------------------------------------------------
+Songbase::SongPdfGeneratorTest: test_generate_passes_rendered_html_to_grover
+----------------------------------------------------------------------------
+  Rendering layout layouts/pdf.html.erb
+  Rendering pdf/songs/show.html.erb within layouts/pdf
+  Rendered pdf/songs/show.html.erb within layouts/pdf (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/pdf.html.erb (Duration: 0.1ms | GC: 0.0ms)
+------------------------------------------------------------------------------------------
+Songbase::SongbookPdfGeneratorTest: test_write_creates_tmp_pdf_and_orders_songs_by_id_list
+------------------------------------------------------------------------------------------
+  Rendering layout layouts/pdf_songbook.html.erb
+  Rendering pdf/songbook/show.html.erb within layouts/pdf_songbook
+  Rendered pdf/songbook/show.html.erb within layouts/pdf_songbook (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/pdf_songbook.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendering layout layouts/pdf_songbook.html.erb
+  Rendering pdf/songbook/show.html.erb within layouts/pdf_songbook
+  Rendered pdf/songbook/show.html.erb within layouts/pdf_songbook (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/pdf_songbook.html.erb (Duration: 0.1ms | GC: 0.0ms)
+---------------------------------------------------------------
+Songbase::SongbookPdfGeneratorTest: test_raises_when_id_missing
+---------------------------------------------------------------
+---------------------------------------------------------------
+Songbase::SongbookPdfGeneratorTest: test_raises_when_id_missing
+---------------------------------------------------------------
+------------------------------------------------------------------------------------------
+Songbase::SongbookPdfGeneratorTest: test_write_creates_tmp_pdf_and_orders_songs_by_id_list
+------------------------------------------------------------------------------------------
+  Rendering layout layouts/pdf_songbook.html.erb
+  Rendering pdf/songbook/show.html.erb within layouts/pdf_songbook
+  Rendered pdf/songbook/show.html.erb within layouts/pdf_songbook (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/pdf_songbook.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendering layout layouts/pdf_songbook.html.erb
+  Rendering pdf/songbook/show.html.erb within layouts/pdf_songbook
+  Rendered pdf/songbook/show.html.erb within layouts/pdf_songbook (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/pdf_songbook.html.erb (Duration: 0.1ms | GC: 0.0ms)
+-----------------------------------------------------------------
+Songbase::AppDataSongQueryTest: test_songs_payload_wraps_like_API
+-----------------------------------------------------------------
+--------------------------------------------------------------------
+Songbase::AppDataSongQueryTest: test_song_returns_nil_for_unknown_id
+--------------------------------------------------------------------
+-------------------------------------------------------------------
+Songbase::AppDataSongQueryTest: test_song_returns_hash_for_known_id
+-------------------------------------------------------------------
+------------------------------------------------------------------------------------
+Songbase::AppDataSongQueryTest: test_songs_preserves_request_order_and_skips_unknown
+------------------------------------------------------------------------------------
+----------------------------------------------------------------------------
+Songbase::SongPdfGeneratorTest: test_generate_passes_rendered_html_to_grover
+----------------------------------------------------------------------------
+  Rendering layout layouts/pdf.html.erb
+  Rendering pdf/songs/show.html.erb within layouts/pdf
+  Rendered pdf/songs/show.html.erb within layouts/pdf (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/pdf.html.erb (Duration: 0.2ms | GC: 0.1ms)
+-----------------------------------------------------------
+Api::SongsControllerTest: test_lookup_returns_songs_wrapper
+-----------------------------------------------------------
+Started POST "/api/songs/lookup" for 127.0.0.1 at 2026-05-04 02:36:14 -0500
+Processing by Api::SongsController#lookup as JSON
+  Parameters: {"ids"=>[304, 303], "song"=>{"ids"=>[304, 303]}}
+Completed 200 OK in 0ms (Views: 0.1ms | GC: 0.0ms)
+---------------------------------------------------------------
+Api::SongsControllerTest: test_show_is_not_found_for_missing_id
+---------------------------------------------------------------
+Started GET "/api/songs/999999" for 127.0.0.1 at 2026-05-04 02:36:14 -0500
+Processing by Api::SongsController#show as HTML
+  Parameters: {"id"=>"999999"}
+Completed 404 Not Found in 0ms (GC: 0.0ms)
+----------------------------------------------------------------
+Api::SongsControllerTest: test_pdf_is_not_found_for_missing_song
+----------------------------------------------------------------
+Started GET "/api/songs/999999/pdf" for 127.0.0.1 at 2026-05-04 02:36:14 -0500
+Processing by Api::SongsController#pdf as HTML
+  Parameters: {"id"=>"999999"}
+Completed 404 Not Found in 0ms (GC: 0.0ms)
+-----------------------------------------------------------
+Api::SongsControllerTest: test_lookup_rejects_non-array_ids
+-----------------------------------------------------------
+Started POST "/api/songs/lookup" for 127.0.0.1 at 2026-05-04 02:36:14 -0500
+Processing by Api::SongsController#lookup as JSON
+  Parameters: {"ids"=>"303", "song"=>{"ids"=>"303"}}
+Completed 422 Unprocessable Content in 0ms (Views: 0.0ms | GC: 0.0ms)
+-----------------------------------------------------
+Api::SongsControllerTest: test_show_returns_song_json
+-----------------------------------------------------
+Started GET "/api/songs/303" for 127.0.0.1 at 2026-05-04 02:36:14 -0500
+Processing by Api::SongsController#show as HTML
+  Parameters: {"id"=>"303"}
+Completed 200 OK in 0ms (Views: 0.0ms | GC: 0.0ms)
+----------------------------------------------------------
+Api::SongsControllerTest: test_pdf_returns_application/pdf
+----------------------------------------------------------
+Started GET "/api/songs/303/pdf" for 127.0.0.1 at 2026-05-04 02:36:14 -0500
+Processing by Api::SongsController#pdf as HTML
+  Parameters: {"id"=>"303"}
+  Rendering layout layouts/pdf.html.erb
+  Rendering pdf/songs/show.html.erb within layouts/pdf
+  Rendered pdf/songs/show.html.erb within layouts/pdf (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/pdf.html.erb (Duration: 0.0ms | GC: 0.0ms)
+Sent data 303-father-abraham.pdf (0.1ms)
+Completed 200 OK in 0ms (Views: 0.0ms | GC: 0.0ms)
+--------------------------------------------------------------------
+Songbase::LyricsChordHtmlTest: test_empty_brackets_reserve_chord_row
+--------------------------------------------------------------------
+-------------------------------------------------------------------
+Songbase::LyricsChordHtmlTest: test_plain_prefix_before_first_chord
+-------------------------------------------------------------------
+---------------------------------------------------------------------------------------
+Songbase::LyricsChordHtmlTest: test_indented_line_is_plain_lyric_without_chorus_wrapper
+---------------------------------------------------------------------------------------
+-----------------------------------------------------------------------
+Songbase::LyricsChordHtmlTest: test_stanza_merges_with_plain_first_line
+-----------------------------------------------------------------------
+------------------------------------------------------------------------------
+Songbase::LyricsChordHtmlTest: test_chords_stack_above_following_text_segments
+------------------------------------------------------------------------------
+----------------------------------------------------------------------------------
+Songbase::LyricsChordHtmlTest: test_stanza_number_on_same_line_as_first_chord_line
+----------------------------------------------------------------------------------
+---------------------------------------------------------------
+Songbase::LyricsChordHtmlTest: test_plain_line_without_brackets
+---------------------------------------------------------------
+---------------------------------------------------------------
+Api::SongsControllerTest: test_show_is_not_found_for_missing_id
+---------------------------------------------------------------
+Started GET "/api/songs/999999" for 127.0.0.1 at 2026-05-04 02:36:53 -0500
+Processing by Api::SongsController#show as HTML
+  Parameters: {"id"=>"999999"}
+Completed 404 Not Found in 1ms (GC: 0.0ms)
+----------------------------------------------------------
+Api::SongsControllerTest: test_pdf_returns_application/pdf
+----------------------------------------------------------
+Started GET "/api/songs/303/pdf" for 127.0.0.1 at 2026-05-04 02:36:53 -0500
+Processing by Api::SongsController#pdf as HTML
+  Parameters: {"id"=>"303"}
+  Rendering layout layouts/pdf.html.erb
+  Rendering pdf/songs/show.html.erb within layouts/pdf
+  Rendered pdf/songs/show.html.erb within layouts/pdf (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/pdf.html.erb (Duration: 0.3ms | GC: 0.0ms)
+Sent data 303-father-abraham.pdf (0.2ms)
+Completed 200 OK in 1ms (Views: 0.0ms | GC: 0.1ms)
+-----------------------------------------------------
+Api::SongsControllerTest: test_show_returns_song_json
+-----------------------------------------------------
+Started GET "/api/songs/303" for 127.0.0.1 at 2026-05-04 02:36:53 -0500
+Processing by Api::SongsController#show as HTML
+  Parameters: {"id"=>"303"}
+Completed 200 OK in 0ms (Views: 0.0ms | GC: 0.0ms)
+----------------------------------------------------------------
+Api::SongsControllerTest: test_pdf_is_not_found_for_missing_song
+----------------------------------------------------------------
+Started GET "/api/songs/999999/pdf" for 127.0.0.1 at 2026-05-04 02:36:53 -0500
+Processing by Api::SongsController#pdf as HTML
+  Parameters: {"id"=>"999999"}
+Completed 404 Not Found in 0ms (GC: 0.0ms)
+-----------------------------------------------------------
+Api::SongsControllerTest: test_lookup_returns_songs_wrapper
+-----------------------------------------------------------
+Started POST "/api/songs/lookup" for 127.0.0.1 at 2026-05-04 02:36:53 -0500
+Processing by Api::SongsController#lookup as JSON
+  Parameters: {"ids"=>[304, 303], "song"=>{"ids"=>[304, 303]}}
+Completed 200 OK in 0ms (Views: 0.0ms | GC: 0.0ms)
+-----------------------------------------------------------
+Api::SongsControllerTest: test_lookup_rejects_non-array_ids
+-----------------------------------------------------------
+Started POST "/api/songs/lookup" for 127.0.0.1 at 2026-05-04 02:36:53 -0500
+Processing by Api::SongsController#lookup as JSON
+  Parameters: {"ids"=>"303", "song"=>{"ids"=>"303"}}
+Completed 422 Unprocessable Content in 0ms (Views: 0.0ms | GC: 0.0ms)
+-----------------------------------------------------------------------
+Songbase::LyricsChordHtmlTest: test_stanza_merges_with_plain_first_line
+-----------------------------------------------------------------------
+-------------------------------------------------------------------
+Songbase::LyricsChordHtmlTest: test_plain_prefix_before_first_chord
+-------------------------------------------------------------------
+---------------------------------------------------------------
+Songbase::LyricsChordHtmlTest: test_plain_line_without_brackets
+---------------------------------------------------------------
+----------------------------------------------------------------------------------
+Songbase::LyricsChordHtmlTest: test_stanza_number_on_same_line_as_first_chord_line
+----------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------
+Songbase::LyricsChordHtmlTest: test_indented_line_is_plain_lyric_without_chorus_wrapper
+---------------------------------------------------------------------------------------
+--------------------------------------------------------------------
+Songbase::LyricsChordHtmlTest: test_empty_brackets_reserve_chord_row
+--------------------------------------------------------------------
+------------------------------------------------------------------------------
+Songbase::LyricsChordHtmlTest: test_chords_stack_above_following_text_segments
+------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------
+Songbase::SongbookPdfGeneratorTest: test_write_creates_tmp_pdf_and_orders_songs_by_id_list
+------------------------------------------------------------------------------------------
+  Rendering layout layouts/pdf_songbook.html.erb
+  Rendering pdf/songbook/show.html.erb within layouts/pdf_songbook
+  Rendered pdf/songbook/show.html.erb within layouts/pdf_songbook (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/pdf_songbook.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendering layout layouts/pdf_songbook.html.erb
+  Rendering pdf/songbook/show.html.erb within layouts/pdf_songbook
+  Rendered pdf/songbook/show.html.erb within layouts/pdf_songbook (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/pdf_songbook.html.erb (Duration: 0.1ms | GC: 0.0ms)
+---------------------------------------------------------------
+Songbase::SongbookPdfGeneratorTest: test_raises_when_id_missing
+---------------------------------------------------------------
+-----------------------------------------------------------------
+Songbase::AppDataSongQueryTest: test_songs_payload_wraps_like_API
+-----------------------------------------------------------------
+------------------------------------------------------------------------------------
+Songbase::AppDataSongQueryTest: test_songs_preserves_request_order_and_skips_unknown
+------------------------------------------------------------------------------------
+--------------------------------------------------------------------
+Songbase::AppDataSongQueryTest: test_song_returns_nil_for_unknown_id
+--------------------------------------------------------------------
+-------------------------------------------------------------------
+Songbase::AppDataSongQueryTest: test_song_returns_hash_for_known_id
+-------------------------------------------------------------------
+----------------------------------------------------------------------------
+Songbase::SongPdfGeneratorTest: test_generate_passes_rendered_html_to_grover
+----------------------------------------------------------------------------
+  Rendering layout layouts/pdf.html.erb
+  Rendering pdf/songs/show.html.erb within layouts/pdf
+  Rendered pdf/songs/show.html.erb within layouts/pdf (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/pdf.html.erb (Duration: 0.1ms | GC: 0.0ms)
+----------------------------------------------------------------------------------------------------
+Songbase::LyricsChordHtmlTest: test_blank_before_indented_chorus_adds_section_break_and_chorus_block
+----------------------------------------------------------------------------------------------------
+---------------------------------------------------------------
+Songbase::LyricsChordHtmlTest: test_plain_line_without_brackets
+---------------------------------------------------------------
+-----------------------------------------------------------------------
+Songbase::LyricsChordHtmlTest: test_stanza_merges_with_plain_first_line
+-----------------------------------------------------------------------
+------------------------------------------------------------------------------
+Songbase::LyricsChordHtmlTest: test_chords_stack_above_following_text_segments
+------------------------------------------------------------------------------
+-------------------------------------------------------------------
+Songbase::LyricsChordHtmlTest: test_plain_prefix_before_first_chord
+-------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------
+Songbase::LyricsChordHtmlTest: test_stanza_number_on_same_line_as_first_chord_line_inside_stanza_block
+------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------
+Songbase::LyricsChordHtmlTest: test_blank_between_verse_lines_does_not_add_section_break
+----------------------------------------------------------------------------------------
+--------------------------------------------------------------------
+Songbase::LyricsChordHtmlTest: test_empty_brackets_reserve_chord_row
+--------------------------------------------------------------------
+-------------------------------------------------------------------
+Songbase::AppDataSongQueryTest: test_song_returns_hash_for_known_id
+-------------------------------------------------------------------
+-----------------------------------------------------------------
+Songbase::AppDataSongQueryTest: test_songs_payload_wraps_like_API
+-----------------------------------------------------------------
+--------------------------------------------------------------------
+Songbase::AppDataSongQueryTest: test_song_returns_nil_for_unknown_id
+--------------------------------------------------------------------
+------------------------------------------------------------------------------------
+Songbase::AppDataSongQueryTest: test_songs_preserves_request_order_and_skips_unknown
+------------------------------------------------------------------------------------
+---------------------------------------------------------------
+Songbase::SongbookPdfGeneratorTest: test_raises_when_id_missing
+---------------------------------------------------------------
+------------------------------------------------------------------------------------------
+Songbase::SongbookPdfGeneratorTest: test_write_creates_tmp_pdf_and_orders_songs_by_id_list
+------------------------------------------------------------------------------------------
+  Rendering layout layouts/pdf_songbook.html.erb
+  Rendering pdf/songbook/show.html.erb within layouts/pdf_songbook
+  Rendered pdf/songbook/show.html.erb within layouts/pdf_songbook (Duration: 0.2ms | GC: 0.1ms)
+  Rendered layout layouts/pdf_songbook.html.erb (Duration: 0.4ms | GC: 0.1ms)
+  Rendering layout layouts/pdf_songbook.html.erb
+  Rendering pdf/songbook/show.html.erb within layouts/pdf_songbook
+  Rendered pdf/songbook/show.html.erb within layouts/pdf_songbook (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/pdf_songbook.html.erb (Duration: 0.1ms | GC: 0.0ms)
+-----------------------------------------------------------
+Api::SongsControllerTest: test_lookup_rejects_non-array_ids
+-----------------------------------------------------------
+Started POST "/api/songs/lookup" for 127.0.0.1 at 2026-05-04 02:43:34 -0500
+Processing by Api::SongsController#lookup as JSON
+  Parameters: {"ids"=>"303", "song"=>{"ids"=>"303"}}
+Completed 422 Unprocessable Content in 0ms (Views: 0.0ms | GC: 0.0ms)
+---------------------------------------------------------------
+Api::SongsControllerTest: test_show_is_not_found_for_missing_id
+---------------------------------------------------------------
+Started GET "/api/songs/999999" for 127.0.0.1 at 2026-05-04 02:43:34 -0500
+Processing by Api::SongsController#show as HTML
+  Parameters: {"id"=>"999999"}
+Completed 404 Not Found in 0ms (GC: 0.0ms)
+----------------------------------------------------------------
+Api::SongsControllerTest: test_pdf_is_not_found_for_missing_song
+----------------------------------------------------------------
+Started GET "/api/songs/999999/pdf" for 127.0.0.1 at 2026-05-04 02:43:34 -0500
+Processing by Api::SongsController#pdf as HTML
+  Parameters: {"id"=>"999999"}
+Completed 404 Not Found in 0ms (GC: 0.0ms)
+-----------------------------------------------------
+Api::SongsControllerTest: test_show_returns_song_json
+-----------------------------------------------------
+Started GET "/api/songs/303" for 127.0.0.1 at 2026-05-04 02:43:34 -0500
+Processing by Api::SongsController#show as HTML
+  Parameters: {"id"=>"303"}
+Completed 200 OK in 0ms (Views: 0.0ms | GC: 0.0ms)
+-----------------------------------------------------------
+Api::SongsControllerTest: test_lookup_returns_songs_wrapper
+-----------------------------------------------------------
+Started POST "/api/songs/lookup" for 127.0.0.1 at 2026-05-04 02:43:34 -0500
+Processing by Api::SongsController#lookup as JSON
+  Parameters: {"ids"=>[304, 303], "song"=>{"ids"=>[304, 303]}}
+Completed 200 OK in 0ms (Views: 0.0ms | GC: 0.0ms)
+----------------------------------------------------------
+Api::SongsControllerTest: test_pdf_returns_application/pdf
+----------------------------------------------------------
+Started GET "/api/songs/303/pdf" for 127.0.0.1 at 2026-05-04 02:43:34 -0500
+Processing by Api::SongsController#pdf as HTML
+  Parameters: {"id"=>"303"}
+  Rendering layout layouts/pdf.html.erb
+  Rendering pdf/songs/show.html.erb within layouts/pdf
+  Rendered pdf/songs/show.html.erb within layouts/pdf (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/pdf.html.erb (Duration: 0.2ms | GC: 0.0ms)
+Sent data 303-father-abraham.pdf (0.1ms)
+Completed 200 OK in 1ms (Views: 0.0ms | GC: 0.0ms)
+----------------------------------------------------------------------------
+Songbase::SongPdfGeneratorTest: test_generate_passes_rendered_html_to_grover
+----------------------------------------------------------------------------
+  Rendering layout layouts/pdf.html.erb
+  Rendering pdf/songs/show.html.erb within layouts/pdf
+  Rendered pdf/songs/show.html.erb within layouts/pdf (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/pdf.html.erb (Duration: 0.0ms | GC: 0.0ms)
+----------------------------------------------------------
+Api::SongsControllerTest: test_pdf_returns_application/pdf
+----------------------------------------------------------
+Started GET "/api/songs/303/pdf" for 127.0.0.1 at 2026-05-04 03:01:50 -0500
+Processing by Api::SongsController#pdf as HTML
+  Parameters: {"id"=>"303"}
+  Rendering layout layouts/pdf.html.erb
+  Rendering pdf/songs/show.html.erb within layouts/pdf
+  Rendered pdf/songs/show.html.erb within layouts/pdf (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/pdf.html.erb (Duration: 0.2ms | GC: 0.0ms)
+Sent data 303-father-abraham.pdf (0.1ms)
+Completed 200 OK in 2ms (Views: 0.0ms | GC: 0.1ms)
+-----------------------------------------------------------
+Api::SongsControllerTest: test_lookup_rejects_non-array_ids
+-----------------------------------------------------------
+Started POST "/api/songs/lookup" for 127.0.0.1 at 2026-05-04 03:01:50 -0500
+Processing by Api::SongsController#lookup as JSON
+  Parameters: {"ids"=>"303", "song"=>{"ids"=>"303"}}
+Completed 422 Unprocessable Content in 0ms (Views: 0.0ms | GC: 0.0ms)
+-----------------------------------------------------------
+Api::SongsControllerTest: test_lookup_returns_songs_wrapper
+-----------------------------------------------------------
+Started POST "/api/songs/lookup" for 127.0.0.1 at 2026-05-04 03:01:50 -0500
+Processing by Api::SongsController#lookup as JSON
+  Parameters: {"ids"=>[304, 303], "song"=>{"ids"=>[304, 303]}}
+Completed 200 OK in 0ms (Views: 0.0ms | GC: 0.0ms)
+-----------------------------------------------------
+Api::SongsControllerTest: test_show_returns_song_json
+-----------------------------------------------------
+Started GET "/api/songs/303" for 127.0.0.1 at 2026-05-04 03:01:50 -0500
+Processing by Api::SongsController#show as HTML
+  Parameters: {"id"=>"303"}
+Completed 200 OK in 0ms (Views: 0.0ms | GC: 0.0ms)
+---------------------------------------------------------------
+Api::SongsControllerTest: test_show_is_not_found_for_missing_id
+---------------------------------------------------------------
+Started GET "/api/songs/999999" for 127.0.0.1 at 2026-05-04 03:01:50 -0500
+Processing by Api::SongsController#show as HTML
+  Parameters: {"id"=>"999999"}
+Completed 404 Not Found in 0ms (GC: 0.0ms)
+----------------------------------------------------------------
+Api::SongsControllerTest: test_pdf_is_not_found_for_missing_song
+----------------------------------------------------------------
+Started GET "/api/songs/999999/pdf" for 127.0.0.1 at 2026-05-04 03:01:50 -0500
+Processing by Api::SongsController#pdf as HTML
+  Parameters: {"id"=>"999999"}
+Completed 404 Not Found in 0ms (GC: 0.0ms)
+----------------------------------------------------------------------------
+Songbase::SongPdfGeneratorTest: test_generate_passes_rendered_html_to_grover
+----------------------------------------------------------------------------
+  Rendering layout layouts/pdf.html.erb
+  Rendering pdf/songs/show.html.erb within layouts/pdf
+  Rendered pdf/songs/show.html.erb within layouts/pdf (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/pdf.html.erb (Duration: 0.1ms | GC: 0.0ms)
+--------------------------------------------------------------------
+Songbase::LyricsChordHtmlTest: test_empty_brackets_reserve_chord_row
+--------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------
+Songbase::LyricsChordHtmlTest: test_blank_before_indented_chorus_adds_section_break_and_chorus_block
+----------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------
+Songbase::LyricsChordHtmlTest: test_blank_between_verse_lines_does_not_add_section_break
+----------------------------------------------------------------------------------------
+------------------------------------------------------------------------------
+Songbase::LyricsChordHtmlTest: test_chords_stack_above_following_text_segments
+------------------------------------------------------------------------------
+---------------------------------------------------------------
+Songbase::LyricsChordHtmlTest: test_plain_line_without_brackets
+---------------------------------------------------------------
+-----------------------------------------------------------------------
+Songbase::LyricsChordHtmlTest: test_stanza_merges_with_plain_first_line
+-----------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------
+Songbase::LyricsChordHtmlTest: test_stanza_number_on_same_line_as_first_chord_line_inside_stanza_block
+------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------
+Songbase::LyricsChordHtmlTest: test_two_chords_on_one_word_line_keep_second_chord_slot
+--------------------------------------------------------------------------------------
+-------------------------------------------------------------------
+Songbase::LyricsChordHtmlTest: test_plain_prefix_before_first_chord
+-------------------------------------------------------------------
+-------------------------------------------------------------------
+Songbase::AppDataSongQueryTest: test_song_returns_hash_for_known_id
+-------------------------------------------------------------------
+--------------------------------------------------------------------
+Songbase::AppDataSongQueryTest: test_song_returns_nil_for_unknown_id
+--------------------------------------------------------------------
+------------------------------------------------------------------------------------
+Songbase::AppDataSongQueryTest: test_songs_preserves_request_order_and_skips_unknown
+------------------------------------------------------------------------------------
+-----------------------------------------------------------------
+Songbase::AppDataSongQueryTest: test_songs_payload_wraps_like_API
+-----------------------------------------------------------------
+------------------------------------------------------------------------------------------
+Songbase::SongbookPdfGeneratorTest: test_write_creates_tmp_pdf_and_orders_songs_by_id_list
+------------------------------------------------------------------------------------------
+  Rendering layout layouts/pdf_songbook.html.erb
+  Rendering pdf/songbook/show.html.erb within layouts/pdf_songbook
+  Rendered pdf/songbook/show.html.erb within layouts/pdf_songbook (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/pdf_songbook.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendering layout layouts/pdf_songbook.html.erb
+  Rendering pdf/songbook/show.html.erb within layouts/pdf_songbook
+  Rendered pdf/songbook/show.html.erb within layouts/pdf_songbook (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/pdf_songbook.html.erb (Duration: 0.1ms | GC: 0.0ms)
+---------------------------------------------------------------
+Songbase::SongbookPdfGeneratorTest: test_raises_when_id_missing
+---------------------------------------------------------------
+------------------------------------------------------------------------------
+Songbase::LyricsChordHtmlTest: test_chords_stack_above_following_text_segments
+------------------------------------------------------------------------------
+-----------------------------------------------------------------------
+Songbase::LyricsChordHtmlTest: test_stanza_merges_with_plain_first_line
+-----------------------------------------------------------------------
+-------------------------------------------------------------------
+Songbase::LyricsChordHtmlTest: test_plain_prefix_before_first_chord
+-------------------------------------------------------------------
+----------------------------------------------------------------------------------------
+Songbase::LyricsChordHtmlTest: test_blank_between_verse_lines_does_not_add_section_break
+----------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------
+Songbase::LyricsChordHtmlTest: test_two_chords_on_one_word_line_keep_second_chord_slot
+--------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------
+Songbase::LyricsChordHtmlTest: test_stanza_number_on_same_line_as_first_chord_line_inside_stanza_block
+------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------
+Songbase::LyricsChordHtmlTest: test_empty_brackets_reserve_chord_row
+--------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------
+Songbase::LyricsChordHtmlTest: test_blank_before_indented_chorus_adds_section_break_and_chorus_block
+----------------------------------------------------------------------------------------------------
+---------------------------------------------------------------
+Songbase::LyricsChordHtmlTest: test_plain_line_without_brackets
+---------------------------------------------------------------
+----------------------------------------------------------------------------
+Songbase::SongPdfGeneratorTest: test_generate_passes_rendered_html_to_grover
+----------------------------------------------------------------------------
+  Rendering layout layouts/pdf.html.erb
+  Rendering pdf/songs/show.html.erb within layouts/pdf
+  Rendered pdf/songs/show.html.erb within layouts/pdf (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/pdf.html.erb (Duration: 0.2ms | GC: 0.0ms)
+-----------------------------------------------------------------
+Songbase::AppDataSongQueryTest: test_songs_payload_wraps_like_API
+-----------------------------------------------------------------
+--------------------------------------------------------------------
+Songbase::AppDataSongQueryTest: test_song_returns_nil_for_unknown_id
+--------------------------------------------------------------------
+------------------------------------------------------------------------------------
+Songbase::AppDataSongQueryTest: test_songs_preserves_request_order_and_skips_unknown
+------------------------------------------------------------------------------------
+-------------------------------------------------------------------
+Songbase::AppDataSongQueryTest: test_song_returns_hash_for_known_id
+-------------------------------------------------------------------
+-----------------------------------------------------------
+Api::SongsControllerTest: test_lookup_returns_songs_wrapper
+-----------------------------------------------------------
+Started POST "/api/songs/lookup" for 127.0.0.1 at 2026-05-04 03:09:46 -0500
+Processing by Api::SongsController#lookup as JSON
+  Parameters: {"ids"=>[304, 303], "song"=>{"ids"=>[304, 303]}}
+Completed 200 OK in 0ms (Views: 0.1ms | GC: 0.0ms)
+----------------------------------------------------------------
+Api::SongsControllerTest: test_pdf_is_not_found_for_missing_song
+----------------------------------------------------------------
+Started GET "/api/songs/999999/pdf" for 127.0.0.1 at 2026-05-04 03:09:46 -0500
+Processing by Api::SongsController#pdf as HTML
+  Parameters: {"id"=>"999999"}
+Completed 404 Not Found in 0ms (GC: 0.0ms)
+-----------------------------------------------------
+Api::SongsControllerTest: test_show_returns_song_json
+-----------------------------------------------------
+Started GET "/api/songs/303" for 127.0.0.1 at 2026-05-04 03:09:46 -0500
+Processing by Api::SongsController#show as HTML
+  Parameters: {"id"=>"303"}
+Completed 200 OK in 0ms (Views: 0.0ms | GC: 0.0ms)
+----------------------------------------------------------
+Api::SongsControllerTest: test_pdf_returns_application/pdf
+----------------------------------------------------------
+Started GET "/api/songs/303/pdf" for 127.0.0.1 at 2026-05-04 03:09:46 -0500
+Processing by Api::SongsController#pdf as HTML
+  Parameters: {"id"=>"303"}
+  Rendering layout layouts/pdf.html.erb
+  Rendering pdf/songs/show.html.erb within layouts/pdf
+  Rendered pdf/songs/show.html.erb within layouts/pdf (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/pdf.html.erb (Duration: 0.0ms | GC: 0.0ms)
+Sent data 303-father-abraham.pdf (0.1ms)
+Completed 200 OK in 0ms (Views: 0.0ms | GC: 0.0ms)
+-----------------------------------------------------------
+Api::SongsControllerTest: test_lookup_rejects_non-array_ids
+-----------------------------------------------------------
+Started POST "/api/songs/lookup" for 127.0.0.1 at 2026-05-04 03:09:46 -0500
+Processing by Api::SongsController#lookup as JSON
+  Parameters: {"ids"=>"303", "song"=>{"ids"=>"303"}}
+Completed 422 Unprocessable Content in 0ms (Views: 0.0ms | GC: 0.0ms)
+---------------------------------------------------------------
+Api::SongsControllerTest: test_show_is_not_found_for_missing_id
+---------------------------------------------------------------
+Started GET "/api/songs/999999" for 127.0.0.1 at 2026-05-04 03:09:46 -0500
+Processing by Api::SongsController#show as HTML
+  Parameters: {"id"=>"999999"}
+Completed 404 Not Found in 0ms (GC: 0.0ms)
+------------------------------------------------------------------------------------------
+Songbase::SongbookPdfGeneratorTest: test_write_creates_tmp_pdf_and_orders_songs_by_id_list
+------------------------------------------------------------------------------------------
+  Rendering layout layouts/pdf_songbook.html.erb
+  Rendering pdf/songbook/show.html.erb within layouts/pdf_songbook
+  Rendered pdf/songbook/show.html.erb within layouts/pdf_songbook (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/pdf_songbook.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendering layout layouts/pdf_songbook.html.erb
+  Rendering pdf/songbook/show.html.erb within layouts/pdf_songbook
+  Rendered pdf/songbook/show.html.erb within layouts/pdf_songbook (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/pdf_songbook.html.erb (Duration: 0.1ms | GC: 0.0ms)
+---------------------------------------------------------------
+Songbase::SongbookPdfGeneratorTest: test_raises_when_id_missing
+---------------------------------------------------------------

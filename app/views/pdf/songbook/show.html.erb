@@ -1,0 +1,6 @@
+<% @songs.each do |entry| %>
+  <section class="song">
+    <h2 class="song-index">Song <%= entry[:index] %></h2>
+    <%= Songbase::LyricsChordHtml.build(entry[:song]["lyrics"]) %>
+  </section>
+<% end %>
