@@ -40,7 +40,6 @@
       font-size: 9pt;
       font-weight: 700;
       margin: 0 0 0.35em;
-      break-after: avoid;
     }
 
     .stanza-inline {
@@ -50,26 +49,39 @@
       margin-right: 0.35em;
     }
 
-    /* Keep stanza / chorus together in one column when the engine allows */
+    /* Title + first stanza live together in .song-anchor — never split apart */
+    .song-anchor {
+      break-inside: avoid;
+      page-break-inside: avoid;
+      -webkit-column-break-inside: avoid;
+      overflow: hidden;
+    }
+
+    /* Keep each subsequent stanza / chorus together within its column */
     .stanza-block,
     .chorus-block {
       break-inside: avoid;
       page-break-inside: avoid;
       -webkit-column-break-inside: avoid;
+      overflow: hidden;
       hyphens: none;
       -webkit-hyphens: none;
       word-break: normal;
       overflow-wrap: normal;
     }
 
-    .stanza-block + .stanza-block {
+    /* Spacing between consecutive stanza-blocks or after the song-anchor */
+    .stanza-block + .stanza-block,
+    .song-anchor + .stanza-block {
       margin-top: 1.2em;
       padding-top: 0.75em;
     }
 
+    /* Chorus lives inside its stanza-block; give it the same top spacing so
+       the gap above matches the gap below (which comes from the next stanza-block) */
     .chorus-block {
-      margin: 0.85em 0 0.95em;
-      padding: 0.65em 0 0.7em 0.25em;
+      margin-top: 1.2em;
+      padding: 0.75em 0 0 0.25em;
     }
 
     .chorus-block .lyric-line:first-child {
@@ -78,11 +90,6 @@
 
     .chorus-block .lyric-line:last-child {
       margin-bottom: 0;
-    }
-
-    .stanza-section-br {
-      margin: 0.5em 0 0.6em;
-      line-height: 0;
     }
 
     .lyric-meta {
@@ -112,15 +119,15 @@
       overflow-wrap: normal;
     }
 
-    /* One source line: all chord cells share the same rail; align bottoms with stanza number */
+    /* One source line: all chord cells share the same rail; align bottoms with stanza number.
+       flex-wrap: nowrap keeps the whole line on one row — overflow is clipped by the
+       stanza-block's overflow:hidden rather than wrapping to a second line. */
     .lyric-line.chord-line {
       display: flex;
       flex-direction: row;
-      flex-wrap: wrap;
+      flex-wrap: nowrap;
       align-items: flex-end;
       line-height: 1.35;
-      word-break: normal;
-      overflow-wrap: normal;
       break-inside: avoid;
       page-break-inside: avoid;
       -webkit-column-break-inside: avoid;
@@ -128,13 +135,14 @@
 
     .lyric-line.chord-line > .stanza-inline {
       align-self: flex-end;
-      margin-right: 0.15em;
+      flex-shrink: 0;
+      margin-right: 0.35em;
     }
 
+    /* white-space: nowrap keeps each lyric line on a single row.
+       Overflow is clipped by the parent stanza-block's overflow:hidden. */
     .lyric-line.lyric-plain {
-      white-space: pre-wrap;
-      word-break: normal;
-      overflow-wrap: normal;
+      white-space: nowrap;
       break-inside: avoid;
       page-break-inside: avoid;
       -webkit-column-break-inside: avoid;
@@ -146,9 +154,14 @@
       align-items: flex-start;
       justify-content: flex-end;
       vertical-align: bottom;
+      flex-shrink: 0;
       margin-right: 0.2em;
       font-family: Arial, Helvetica, sans-serif;
-      max-width: 100%;
+    }
+
+    /* Mid-word chord: no gap between this unit and the next syllable */
+    .cw.cw-tight {
+      margin-right: 0;
     }
 
     .cw .ch {
@@ -169,11 +182,7 @@
       font-size: 9pt;
       min-height: 1.2em;
       line-height: 1.35;
-      white-space: normal;
-      hyphens: none;
-      -webkit-hyphens: none;
-      word-break: normal;
-      overflow-wrap: normal;
+      white-space: nowrap;
     }
   </style>
 </head>

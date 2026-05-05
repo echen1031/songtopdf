@@ -21,8 +21,13 @@ module Songbase
     end
 
     # Returns the song Hash as in the JSON file, or nil.
-    def song(id)
-      songs_by_id[id.to_i]
+    # Pass +tune:+ (0 or 1) to extract a specific tune section from songs that
+    # have multiple tunes separated by "### ..." headers in the lyrics.
+    def song(id, tune: nil)
+      raw = songs_by_id[id.to_i]
+      return nil if raw.nil?
+
+      tune.nil? ? raw : with_tune(raw, tune.to_i)
     end
 
     # Returns an Array of song Hashes in the order of +ids+; omits unknown ids.
@@ -52,6 +57,18 @@ module Songbase
 
         idx[song["id"].to_i] = song.freeze
       end.freeze
+    end
+
+    # Returns a copy of +song+ with lyrics replaced by the tune at +index+.
+    # Splits lyrics on "### ..." section headers; falls back to last section if
+    # index is out of range. Returns +song+ unchanged when only one section exists.
+    def with_tune(song, index)
+      sections = song["lyrics"].to_s.split(/(?:^|\n)(?=###)/).reject(&:empty?)
+      return song if sections.size <= 1
+
+      section = sections[index] || sections.last
+      lyrics = section.lines.drop_while { |l| l.start_with?("###") }.join.lstrip
+      song.merge("lyrics" => lyrics)
     end
   end
 

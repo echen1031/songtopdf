@@ -12,6 +12,36 @@ module Songbase
       def build(lyrics)
         new(lyrics.to_s).build
       end
+
+      # Returns [head_html, tail_html].
+      # head_html = everything up to and including the first stanza-block or
+      # chorus-block (used to wrap the song title and first stanza together in
+      # one break-inside:avoid container so they never get separated).
+      # tail_html = everything after that first block.
+      # If no block is found all lyrics land in head_html so they stay with the title.
+      def build_split(lyrics)
+        html = build(lyrics).to_s
+        m = html.match(/<div class="(?:stanza|chorus)-block">/)
+        return [html.html_safe, "".html_safe] unless m
+
+        pos = m.end(0)
+        depth = 1
+        while depth > 0
+          next_open  = html.index("<div", pos)
+          next_close = html.index("</div>", pos)
+          break unless next_close
+
+          if next_open && next_open < next_close
+            depth += 1
+            pos = next_open + 4
+          else
+            depth -= 1
+            pos = next_close + 6
+          end
+        end
+
+        [html[0...pos].html_safe, html[pos..].html_safe]
+      end
     end
 
     def initialize(lyrics)
@@ -24,14 +54,12 @@ module Songbase
       i = 0
       stanza_open = false
       chorus_open = false
-      pending_chorus_gap = false
 
       while i < lines.length
         line = lines[i]
 
         if line.strip.empty?
           out << render_spacer
-          pending_chorus_gap = true if stanza_open
           i += 1
           next
         end
@@ -41,7 +69,6 @@ module Songbase
           chorus_open = false
           out << close_stanza(stanza_open)
           stanza_open = false
-          pending_chorus_gap = false
 
           num = line.strip
           j = i + 1
@@ -71,10 +98,6 @@ module Songbase
 
         if stanza_open
           if chorus_line?(line)
-            if pending_chorus_gap && !chorus_open
-              out << %(<div class="stanza-section-br"><br></div>\n)
-            end
-            pending_chorus_gap = false
             unless chorus_open
               out << %(<div class="chorus-block">\n)
               chorus_open = true
@@ -83,12 +106,10 @@ module Songbase
           else
             out << close_chorus(chorus_open)
             chorus_open = false
-            pending_chorus_gap = false
             out << render_line(line)
           end
           i += 1
         else
-          pending_chorus_gap = false
           out << render_line(line)
           i += 1
         end
@@ -137,7 +158,14 @@ module Songbase
       end
 
       if line.include?("[")
-        inner = parse_segments(line).map { |seg| render_segment(seg) }.join
+        segs  = parse_segments(line)
+        inner = segs.each_with_index.map do |seg, idx|
+          # A segment is "tight" (no trailing gap) when its text has no trailing
+          # whitespace AND a next segment follows — i.e. the chord sits mid-word.
+          next_seg = segs[idx + 1]
+          tight = next_seg && seg.text.to_s != "" && !seg.text.match?(/[ \t]\z/)
+          render_segment(seg, tight: tight)
+        end.join
         return %(<div class="lyric-line chord-line">#{prefix}#{inner}</div>\n)
       end
 
@@ -171,7 +199,7 @@ module Songbase
       segs
     end
 
-    def render_segment(seg)
+    def render_segment(seg, tight: false)
       chord_inner = if seg.chord.nil? || seg.chord.empty?
         "&nbsp;"
       else
@@ -185,7 +213,8 @@ module Songbase
       else
         "&nbsp;"
       end
-      %(<span class="cw"><span class="ch">#{chord_inner}</span><span class="txt">#{text_inner}</span></span>)
+      css = tight ? "cw cw-tight" : "cw"
+      %(<span class="#{css}"><span class="ch">#{chord_inner}</span><span class="txt">#{text_inner}</span></span>)
     end
 
     def h(str)

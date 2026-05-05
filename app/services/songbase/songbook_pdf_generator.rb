@@ -2,22 +2,39 @@
 
 module Songbase
   # Builds one PDF from an ordered list of song ids (3-column HTML, chord-over-word lyrics).
+  #
+  # Pass plain ids:   SongbookPdfGenerator.new([704, "531?tune=1"])
+  # Pass pre-numbered entries (e.g. from CSV):
+  #   SongbookPdfGenerator.new(entries: [{ id: 750, tune: nil, number: 1 }, ...])
   class SongbookPdfGenerator
     DEFAULT_OUTPUT = -> { Rails.root.join("tmp", "songbook.pdf") }
 
-    def initialize(ids, output_path: nil, grover_class: nil)
-      @ids = Array(ids).map(&:to_i)
+    def initialize(ids = nil, output_path: nil, grover_class: nil, entries: nil)
+      @entries = if entries
+        entries
+      else
+        Array(ids).map { |raw| self.class.parse_id_tune(raw.to_s) }
+      end
       @output_path = output_path || DEFAULT_OUTPUT.call
       @grover_class = grover_class || default_grover_class
     end
 
+    # Parses "531?tune=1" → { id: 531, tune: 1 }; "531" → { id: 531, tune: nil }
+    def self.parse_id_tune(str)
+      if (m = str.match(/\A(\d+)\?tune=(\d+)\z/))
+        { id: m[1].to_i, tune: m[2].to_i }
+      else
+        { id: str.to_i, tune: nil }
+      end
+    end
+
     def songs_payload
       query = Songbase::AppDataSongQuery.instance
-      @ids.map.with_index(1) do |id, index|
-        song = query.song(id)
-        raise Songbase::SongNotFound, "Unknown song id: #{id}" unless song
+      @entries.map.with_index(1) do |entry, auto_index|
+        song = query.song(entry[:id], tune: entry[:tune])
+        raise Songbase::SongNotFound, "Unknown song id: #{entry[:id]}" unless song
 
-        { index: index, song: song }
+        { index: entry[:number] || auto_index, song: song }
       end
     end
 

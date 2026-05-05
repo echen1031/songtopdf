@@ -1,6 +1,11 @@
-<% @songs.each do |entry| %>
+<% @songs.each_with_index do |entry, i| %>
+  <% head_html, tail_html = Songbase::LyricsChordHtml.build_split(entry[:song]["lyrics"]) %>
   <section class="song">
-    <h2 class="song-index">Song <%= entry[:index] %></h2>
-    <%= Songbase::LyricsChordHtml.build(entry[:song]["lyrics"]) %>
+    <% if i.positive? %><br><% end %>
+    <div class="song-anchor">
+      <h2 class="song-index">Song <%= entry[:index] %></h2>
+      <%= head_html %>
+    </div>
+    <%= tail_html %>
   </section>
 <% end %>
