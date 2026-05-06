@@ -9,13 +9,14 @@ module Songbase
   class SongbookPdfGenerator
     DEFAULT_OUTPUT = -> { Rails.root.join("tmp", "songbook.pdf") }
 
-    def initialize(ids = nil, output_path: nil, grover_class: nil, entries: nil)
+    def initialize(ids = nil, output_path: nil, grover_class: nil, entries: nil, toc_sections: nil)
       @entries = if entries
         entries
       else
         Array(ids).map { |raw| self.class.parse_id_tune(raw.to_s) }
       end
-      @output_path = output_path || DEFAULT_OUTPUT.call
+      @toc_sections = toc_sections
+      @output_path  = output_path || DEFAULT_OUTPUT.call
       @grover_class = grover_class || default_grover_class
     end
 
@@ -60,7 +61,7 @@ module Songbase
       ActionController::Base.render(
         template: "pdf/songbook/show",
         layout: "pdf_songbook",
-        assigns: { songs: songs_payload }
+        assigns: { songs: songs_payload, toc_sections: @toc_sections }
       )
     end
   end

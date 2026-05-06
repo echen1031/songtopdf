@@ -13,28 +13,34 @@ namespace :songtopdf do
 
   desc "Build chord songbook PDF from data/ssot_song_ids.csv (or override with SONGBOOK_IDS=704,3952)"
   task export: :environment do
-    entries = if ENV["SONGBOOK_IDS"].present?
-      ENV["SONGBOOK_IDS"].split(",").map(&:strip).reject(&:empty?).map do |raw|
-        Songbase::SongbookPdfGenerator.parse_id_tune(raw)
-      end
+    if ENV["SONGBOOK_IDS"].present?
+      entries      = ENV["SONGBOOK_IDS"].split(",").map(&:strip).reject(&:empty?).map { |raw| Songbase::SongbookPdfGenerator.parse_id_tune(raw) }
+      toc_sections = nil
     else
-      entries_from_csv(CSV_PATH)
+      entries, toc_sections = entries_from_csv(CSV_PATH)
     end
 
-    out = Rails.root.join("tmp", "songbook.pdf")
-    path = Songbase::SongbookPdfGenerator.new(entries: entries, output_path: out).write!(out)
+    out  = Rails.root.join("tmp", "songbook.pdf")
+    path = Songbase::SongbookPdfGenerator.new(entries: entries, toc_sections: toc_sections, output_path: out).write!(out)
     puts "Wrote #{path} (#{entries.size} songs)"
   end
 
   # ---------------------------------------------------------------------------
 
+  # Returns [entries, toc_sections].
+  # entries      – flat array of { id:, tune:, number: } for SongbookPdfGenerator
+  # toc_sections – array of { name:, entries: [{ number:, title: }] } for TocHtmlGenerator
   def entries_from_csv(path)
-    query = Songbase::AppDataSongQuery.instance
-    rows  = CSV.read(path, headers: true)
-    entries = []
+    query        = Songbase::AppDataSongQuery.instance
+    rows         = CSV.read(path, headers: true)
+    headers      = rows.headers
+    all_entries  = []
+    toc_sections = []
 
     CSV_COLUMN_BASES.each do |col_idx, base|
-      section = []
+      section_name = headers[col_idx].to_s
+      section      = []
+
       rows.each do |row|
         cell = row[col_idx].to_s.strip
         next if cell.empty?
@@ -43,19 +49,22 @@ namespace :songtopdf do
         song   = query.song(parsed[:id], tune: parsed[:tune])
         next unless song
 
-        section << { parsed: parsed, height: estimate_height(song) }
+        section << { parsed: parsed, height: estimate_height(song), title: song["title"].to_s }
       end
 
-      # First Fit Decreasing bin-packing: pack songs into virtual columns so
-      # each column is filled as tightly as possible, minimising gaps.
-      ordered = pack_section(section)
+      ordered     = pack_section(section)
+      toc_entries = []
 
       ordered.each_with_index do |item, idx|
-        entries << item[:parsed].merge(number: base + idx)
+        number = base + idx
+        all_entries  << item[:parsed].merge(number: number)
+        toc_entries  << { number: number, title: item[:title] }
       end
+
+      toc_sections << { name: section_name, entries: toc_entries }
     end
 
-    entries
+    [all_entries, toc_sections]
   end
 
   # First Fit Decreasing bin-packing within one section.
