@@ -170,3 +170,79 @@
   Rendering pdf/songbook/show.html.erb within layouts/pdf_songbook
   Rendered pdf/songbook/show.html.erb within layouts/pdf_songbook (Duration: 11.2ms | GC: 2.6ms)
   Rendered layout layouts/pdf_songbook.html.erb (Duration: 11.8ms | GC: 2.6ms)
+  Rendering layout layouts/pdf_songbook.html.erb
+  Rendering pdf/songbook/show.html.erb within layouts/pdf_songbook
+  Rendered pdf/songbook/show.html.erb within layouts/pdf_songbook (Duration: 10.7ms | GC: 2.4ms)
+  Rendered layout layouts/pdf_songbook.html.erb (Duration: 11.1ms | GC: 2.4ms)
+  Rendering layout layouts/pdf_songbook.html.erb
+  Rendering pdf/songbook/show.html.erb within layouts/pdf_songbook
+  Rendered pdf/songbook/show.html.erb within layouts/pdf_songbook (Duration: 10.5ms | GC: 2.2ms)
+  Rendered layout layouts/pdf_songbook.html.erb (Duration: 10.9ms | GC: 2.2ms)
+  Rendering layout layouts/pdf_songbook.html.erb
+  Rendering pdf/songbook/show.html.erb within layouts/pdf_songbook
+  Rendered pdf/songbook/show.html.erb within layouts/pdf_songbook (Duration: 10.5ms | GC: 2.2ms)
+  Rendered layout layouts/pdf_songbook.html.erb (Duration: 10.9ms | GC: 2.2ms)
+  Rendering layout layouts/pdf_songbook.html.erb
+  Rendering pdf/songbook/show.html.erb within layouts/pdf_songbook
+  Rendered pdf/songbook/show.html.erb within layouts/pdf_songbook (Duration: 9.8ms | GC: 1.6ms)
+  Rendered layout layouts/pdf_songbook.html.erb (Duration: 10.2ms | GC: 1.6ms)
+  Rendering layout layouts/pdf_songbook.html.erb
+  Rendering pdf/songbook/show.html.erb within layouts/pdf_songbook
+  Rendered pdf/songbook/show.html.erb within layouts/pdf_songbook (Duration: 10.4ms | GC: 2.1ms)
+  Rendered layout layouts/pdf_songbook.html.erb (Duration: 10.8ms | GC: 2.1ms)
+  Rendering layout layouts/pdf_songbook.html.erb
+  Rendering pdf/songbook/show.html.erb within layouts/pdf_songbook
+  Rendered pdf/songbook/show.html.erb within layouts/pdf_songbook (Duration: 10.5ms | GC: 2.2ms)
+  Rendered layout layouts/pdf_songbook.html.erb (Duration: 10.9ms | GC: 2.2ms)
+  Rendering layout layouts/pdf_songbook.html.erb
+  Rendering pdf/songbook/show.html.erb within layouts/pdf_songbook
+  Rendered pdf/songbook/show.html.erb within layouts/pdf_songbook (Duration: 11.0ms | GC: 2.6ms)
+  Rendered layout layouts/pdf_songbook.html.erb (Duration: 11.4ms | GC: 2.6ms)
+  Rendering layout layouts/pdf_songbook.html.erb
+  Rendering pdf/songbook/show.html.erb within layouts/pdf_songbook
+  Rendered pdf/songbook/show.html.erb within layouts/pdf_songbook (Duration: 10.5ms | GC: 2.2ms)
+  Rendered layout layouts/pdf_songbook.html.erb (Duration: 10.9ms | GC: 2.2ms)
+  Rendering layout layouts/pdf_songbook.html.erb
+  Rendering pdf/songbook/show.html.erb within layouts/pdf_songbook
+  Rendered pdf/songbook/show.html.erb within layouts/pdf_songbook (Duration: 10.4ms | GC: 2.2ms)
+  Rendered layout layouts/pdf_songbook.html.erb (Duration: 10.8ms | GC: 2.2ms)
+  Rendering layout layouts/pdf_songbook.html.erb
+  Rendering pdf/songbook/show.html.erb within layouts/pdf_songbook
+  Rendered pdf/songbook/show.html.erb within layouts/pdf_songbook (Duration: 10.5ms | GC: 2.2ms)
+  Rendered layout layouts/pdf_songbook.html.erb (Duration: 10.9ms | GC: 2.2ms)
+  Rendering layout layouts/pdf_songbook.html.erb
+  Rendering pdf/songbook/show.html.erb within layouts/pdf_songbook
+  Rendered pdf/songbook/show.html.erb within layouts/pdf_songbook (Duration: 10.7ms | GC: 2.5ms)
+  Rendered layout layouts/pdf_songbook.html.erb (Duration: 11.1ms | GC: 2.5ms)
+  Rendering layout layouts/pdf_songbook.html.erb
+  Rendering pdf/songbook/show.html.erb within layouts/pdf_songbook
+  Rendered pdf/songbook/show.html.erb within layouts/pdf_songbook (Duration: 11.1ms | GC: 2.7ms)
+  Rendered layout layouts/pdf_songbook.html.erb (Duration: 11.5ms | GC: 2.7ms)
+  Rendering layout layouts/pdf_songbook.html.erb
+  Rendering pdf/songbook/show.html.erb within layouts/pdf_songbook
+  Rendered pdf/songbook/show.html.erb within layouts/pdf_songbook (Duration: 10.4ms | GC: 2.1ms)
+  Rendered layout layouts/pdf_songbook.html.erb (Duration: 10.8ms | GC: 2.1ms)
+  Rendering layout layouts/pdf_songbook.html.erb
+  Rendering pdf/songbook/show.html.erb within layouts/pdf_songbook
+  Rendered pdf/songbook/show.html.erb within layouts/pdf_songbook (Duration: 10.8ms | GC: 2.6ms)
+  Rendered layout layouts/pdf_songbook.html.erb (Duration: 12.1ms | GC: 2.6ms)
+  Rendering layout layouts/pdf_songbook.html.erb
+  Rendering pdf/songbook/show.html.erb within layouts/pdf_songbook
+  Rendered pdf/songbook/show.html.erb within layouts/pdf_songbook (Duration: 10.7ms | GC: 2.5ms)
+  Rendered layout layouts/pdf_songbook.html.erb (Duration: 11.1ms | GC: 2.5ms)
+  Rendering layout layouts/pdf_songbook.html.erb
+  Rendering pdf/songbook/show.html.erb within layouts/pdf_songbook
+  Rendered pdf/songbook/show.html.erb within layouts/pdf_songbook (Duration: 9.8ms | GC: 1.5ms)
+  Rendered layout layouts/pdf_songbook.html.erb (Duration: 10.2ms | GC: 1.5ms)
+  Rendering layout layouts/pdf_songbook.html.erb
+  Rendering pdf/songbook/show.html.erb within layouts/pdf_songbook
+  Rendered pdf/songbook/show.html.erb within layouts/pdf_songbook (Duration: 10.3ms | GC: 2.0ms)
+  Rendered layout layouts/pdf_songbook.html.erb (Duration: 10.7ms | GC: 2.0ms)
+  Rendering layout layouts/pdf_songbook.html.erb
+  Rendering pdf/songbook/show.html.erb within layouts/pdf_songbook
+  Rendered pdf/songbook/show.html.erb within layouts/pdf_songbook (Duration: 10.4ms | GC: 2.1ms)
+  Rendered layout layouts/pdf_songbook.html.erb (Duration: 10.8ms | GC: 2.1ms)
+  Rendering layout layouts/pdf_songbook.html.erb
+  Rendering pdf/songbook/show.html.erb within layouts/pdf_songbook
+  Rendered pdf/songbook/show.html.erb within layouts/pdf_songbook (Duration: 10.1ms | GC: 1.6ms)
+  Rendered layout layouts/pdf_songbook.html.erb (Duration: 10.5ms | GC: 1.6ms)

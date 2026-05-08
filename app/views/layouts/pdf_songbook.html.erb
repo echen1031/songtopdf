@@ -25,7 +25,7 @@
 
     .columns {
       column-count: 3;
-      column-gap: 26px;
+      column-gap: 12px;
       column-fill: auto;
       hyphens: none;
       -webkit-hyphens: none;
@@ -119,13 +119,11 @@
       overflow-wrap: normal;
     }
 
-    /* One source line: all chord cells share the same rail; align bottoms with stanza number.
-       flex-wrap: nowrap keeps the whole line on one row — overflow is clipped by the
-       stanza-block's overflow:hidden rather than wrapping to a second line. */
+    /* One source line: all chord cells share the same rail; align bottoms with stanza number. */
     .lyric-line.chord-line {
       display: flex;
       flex-direction: row;
-      flex-wrap: nowrap;
+      flex-wrap: wrap;
       align-items: flex-end;
       line-height: 1.35;
       break-inside: avoid;
@@ -139,10 +137,8 @@
       margin-right: 0.35em;
     }
 
-    /* white-space: nowrap keeps each lyric line on a single row.
-       Overflow is clipped by the parent stanza-block's overflow:hidden. */
     .lyric-line.lyric-plain {
-      white-space: nowrap;
+      white-space: normal;
       break-inside: avoid;
       page-break-inside: avoid;
       -webkit-column-break-inside: avoid;

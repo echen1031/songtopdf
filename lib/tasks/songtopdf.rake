@@ -7,9 +7,13 @@ namespace :songtopdf do
   CSV_COLUMN_BASES = { 0 => 1, 1 => 100, 2 => 200, 3 => 300 }.freeze
   CSV_PATH = Rails.root.join("data", "ssot_song_ids.csv")
 
-  # A4 column height in "units" at 9pt / 1.35 line-height / 10mm margins:
-  #   (297mm − 20mm) / (9pt × 1.35 × 0.3528 mm/pt) ≈ 64.5 → use 64
-  COLUMN_HEIGHT_UNITS = 64.0
+  # A4 column height in "units" at 9pt / 1.35 line-height / top:5mm bottom:2mm margins:
+  #   (297mm − 7mm) / (9pt × 1.35 × 0.3528 mm/pt) ≈ 67.8 → use 67
+  COLUMN_HEIGHT_UNITS = 67.0
+
+  # Approximate characters that fit on one column line at 9pt Arial, 3-col layout.
+  # A4 206mm content − 2×12px gaps ≈ 188pt column; Arial 9pt avg char ≈ 4.5pt → ~42 chars.
+  CHARS_PER_COL_LINE = 42
 
   desc "Build chord songbook PDF from data/ssot_song_ids.csv (or override with SONGBOOK_IDS=704,3952)"
   task export: :environment do
@@ -88,17 +92,17 @@ namespace :songtopdf do
 
   # Estimate song height in "units" (1 unit ≈ one 9pt plain lyric line).
   #
-  # Line costs:
+  # Line costs (per visual row — long lines that wrap add proportionally more):
   #   blank line           → 0.35  (lyric-spacer)
   #   stanza number "1"    →  0    (merged into song-anchor, no extra spacing)
   #   stanza number 2+     → 1.95  (inter-block margin-top + padding-top)
-  #   chord line (has "[") → 1.75  (chord rail + text row)
-  #   plain lyric line     → 1.25
+  #   chord line (has "[") → 1.75 × wrap_rows  (chord rail + text row per wrapped row)
+  #   plain lyric line     → 1.25 × wrap_rows
   #
   # Title overhead = 2.0 units (h2 height + bottom margin).
   def estimate_height(song)
-    units         = 2.0
-    stanza_count  = 0
+    units        = 2.0
+    stanza_count = 0
 
     song["lyrics"].to_s.each_line do |raw|
       line = raw.chomp
@@ -106,14 +110,26 @@ namespace :songtopdf do
         units += 0.35
       elsif line.match?(/\A\s*\d+\s*\z/)
         stanza_count += 1
-        units += 1.95 if stanza_count > 1  # each stanza after the first adds spacing
+        units += 1.95 if stanza_count > 1
       elsif line.include?("[")
-        units += 1.75
+        text = line.gsub(/\[[^\]]*\]/, "")
+        rows = wrap_rows(text)
+        units += 1.75 * rows
       else
-        units += 1.25
+        rows = wrap_rows(line)
+        units += 1.25 * rows
       end
     end
 
     units
   end
+
+  # How many visual rows a text string occupies after wrapping at CHARS_PER_COL_LINE.
+  def wrap_rows(text)
+    len = text.strip.length
+    return 1 if len == 0
+
+    [(len.to_f / CHARS_PER_COL_LINE).ceil, 1].max
+  end
+
 end
