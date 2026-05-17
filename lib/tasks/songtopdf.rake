@@ -7,6 +7,17 @@ namespace :songtopdf do
   CSV_COLUMN_BASES = { 0 => 1, 1 => 100, 2 => 200, 3 => 300 }.freeze
   CSV_PATH = Rails.root.join("data", "ssot_song_ids.csv")
 
+  # Parenthetical original-hymnal suffixes shown in the TOC for Praise (200-212)
+  # and Worship (300-306) sections.  nil = no suffix.
+  TOC_PARENTHETICALS = {
+    200 => "(602)",  201 => "(116)",  202 => "(227)",  203 => "(223)",
+    204 => "(1112)", 205 => "(1174)", 206 => nil,      207 => "(233)",
+    208 => "(82)",   209 => "(124)",  210 => "(112)",  211 => "(1314)",
+    212 => "(241)",
+    300 => "(30)",   301 => "(43)",   302 => "(12)",   303 => "(33)",
+    304 => "(1081)", 305 => "(48)",   306 => "(7)",
+  }.freeze
+
   # A4 column height in "units" at 9pt / 1.35 line-height / top:5mm bottom:2mm margins:
   #   (297mm − 7mm) / (9pt × 1.35 × 0.3528 mm/pt) ≈ 67.8 → use 67
   COLUMN_HEIGHT_UNITS = 67.0
@@ -60,9 +71,11 @@ namespace :songtopdf do
       toc_entries = []
 
       ordered.each_with_index do |item, idx|
-        number = base + idx
+        number    = base + idx
+        suffix    = TOC_PARENTHETICALS[number]
+        toc_title = suffix ? "#{item[:title]} #{suffix}" : item[:title]
         all_entries  << item[:parsed].merge(number: number)
-        toc_entries  << { number: number, title: item[:title] }
+        toc_entries  << { number: number, title: toc_title }
       end
 
       toc_sections << { name: section_name, entries: toc_entries }

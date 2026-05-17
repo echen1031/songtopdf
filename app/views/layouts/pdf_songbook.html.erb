@@ -195,10 +195,14 @@
       margin: 0 0 1.5em;
     }
 
-    /* Two-column layout for TOC entries */
+    /* Two-column layout for TOC entries — fixed height forces overflow into column 2
+       rather than a second page. Height = A4 content (290mm) minus title block (~15mm)
+       minus .toc margin-bottom (~7mm), with a small safety buffer. */
     .toc-cols {
       column-count: 2;
       column-gap: 28px;
+      column-fill: auto;
+      height: 258mm;
     }
 
     .toc-section {

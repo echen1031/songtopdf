@@ -31,9 +31,9 @@ Grover.configure do |config|
     print_background: true,
     margin: {
       top: "5mm",
-      bottom: "2mm",
-      left: "2mm",
-      right: "2mm"
+      bottom: "5mm",
+      left: "5mm",
+      right: "5mm"
     },
     # Helpful in Docker / CI; harmless on macOS dev.
     launch_args: %w[--no-sandbox --disable-setuid-sandbox]
